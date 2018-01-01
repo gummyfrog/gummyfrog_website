@@ -1,0 +1,38 @@
+doctype
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
+  body
+    header
+      h1 GummyFrog
+      g=' on '+title+'.'
+
+      include nav.jade
+
+
+
+
+    div#stuffHigh
+      a.twitter-timeline(href='https://twitter.com/bot_inspiration?ref_src=twsrc%5Etfw' data-height="300" data-tweet-limit="6" data-chrome="nofooter noborder transparent") Tweets by bot_inspiration
+      script(async='', src='https://platform.twitter.com/widgets.js', charset='utf-8')
+
+
+
+
+    section#wrapper
+        footer
+          section.css-table
+            section.four-column
+              section.cell
+                I "do you summer view<br/>at my days with dark we your<br/>sweetly fallen our"
+              section.cell
+                p Bolopo Dragonslayer is an automated Twitter<br/> account that generates (often nonsensical)<br/> haikus.
+              section.cell
+                p The bulk of the haiku generation is contained<br /> within Sylb, my syllable sorting Node module.<br/>Bolopo will add words from #haiku Tweets</br>to his corpus every two hours or so,<br/>and Sylb will use those to make haikus.
+              section.cell
+                p The first Bolopo was a self contained <br/>iPhone app coded in Swift.
+                p I fell out of love with the sorting<br/ > algorithm I wrote two times,<br />and rewrote Bolopo three times.<br/>In the end, I switched from Swift<br/> to JavaScript and offloaded the<br/>sorting and generation to my<br/>first Node module, Sylb.
+              section.cell
+                p Bolopo now lives happily on</br>my free range bot server,</br>generating Haikus and</br>posting them on Twitter.<br/>You can visit him <a href="https://www.twitter.com/bot_inspiration" >here</a>

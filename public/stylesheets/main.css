@@ -1,0 +1,38 @@
+body {
+  padding: 65px;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+g{
+  padding-left: 22px;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+project {
+  color: #00b7ff;
+}
+
+tween {
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+#stuffHigh {
+  float: right;
+  margin-top: -300px;
+  margin-right: 65px;
+}
+
+
+#stuff {
+  float: right;
+  margin-right: 65px;
+}
+
+#wrapper {
+  padding-top: 30px;
+}

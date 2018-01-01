@@ -1,0 +1,39 @@
+doctype
+html
+  head
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+
+    title= title
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
+  body
+    header
+      h1 GummyFrog
+      g=' on '+title+'.'
+
+      include nav.jade
+
+
+
+
+    div#stuffHigh
+      canvas#emoji-chart1(width='400', height='600')
+      canvas#emoji-chart2(width='400', height='600')
+
+      script(src='javascripts/script.js')
+
+
+
+
+    section#wrapper
+        footer
+          section.css-table
+            section.four-column
+              section.cell
+                p Over the course of two weeks in<br/>early November, I ran a small scale<br/>data mining operation on Twitter.<br/>I searched for Tweets containing<br/> emojis, and collected the words in <br/>the Tweet, sorted by the emoji.
+                p It was a wonderful learning<br/>experience for me, and the data<br/>reveals some interesting trends.
+                p The emojis with the most eccentric<br/> word distribution are associated<br/> with love, like the heart eyes and kisses.<br/> For these emojis, the word 'love' is used<br/> around 130% more than other words. <br/> The heart emoji are the worst<br/> offenders.
+                p 'Love' seems to rank high across<br/> all emojis, actually. Maybe there's <br/>a paper in here.
+              section.cell
+                p Reload the page to see new data.
