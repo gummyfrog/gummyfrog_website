@@ -20,7 +20,21 @@ tween {
   font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+socialText {
+  font: 18px "Futura", Helvetica, Arial, sans-serif;
+  position: relative;
+  top:-7px;
+}
 
+#line {
+  padding-left: 26px;
+  font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#social {
+  width: 30px;
+  height: 30px;
+}
 
 #stuffHigh {
   float: right;
