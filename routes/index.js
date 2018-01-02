@@ -35,4 +35,10 @@ router.get('/emojis', function(req, res){
   });
 });
 
+router.get('/allEmojis', function(req, res){
+  res.render('allEmojiPage', {
+    title: 'Lots of Emoji Data'
+  });
+});
+
 module.exports = router;

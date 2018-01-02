@@ -1,4 +1,4 @@
-var urls = ['k6vez','6z1sb','jh5hn','ksb0r','hvhvf','of9iz','j2d2z','k98aj','ewbuj','9jfej']
+var urls = ['1argwz','12ltxf','w229v','11eypv','71uv7','u9rgj','tm6oz','t0r37','mgzfn','rtvvn','r8g9v','1egcv7','q1l2b','17b5lv','6zppf','6ea3n','1hddqb','ywxz7','1g6iir','wj7k3','vxryb','6c4xv','1bcwir']
 
 function random() {
   return urls[Math.floor(Math.random() * urls.length)];

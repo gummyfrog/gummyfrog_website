@@ -21,12 +21,23 @@ tween {
 }
 
 
+
 #stuffHigh {
   float: right;
+  max-width: 400px;
+  max-height: none;
   margin-top: -300px;
   margin-right: 65px;
 }
 
+
+#stuffMiddle {
+  float: right;
+  max-width: 400px;
+  max-height: none;
+  margin-top: -300px;
+  margin-right: 130px;
+}
 
 #stuff {
   float: right;
