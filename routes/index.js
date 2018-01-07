@@ -12,9 +12,6 @@ router.get('/', function(req, res){
 });
 
 
-
-
-
 router.get('/contact', function(req, res){
   res.render('contact', {
     title: 'Contact'
@@ -40,5 +37,12 @@ router.get('/allEmojis', function(req, res){
     title: 'Lots of Emoji Data'
   });
 });
+
+router.get('/resizer', function(req, res){
+  res.render('resizer', {
+    title: 'Instagram Image Formatter'
+  });
+});
+
 
 module.exports = router;

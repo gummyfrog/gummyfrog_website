@@ -1,0 +1,35 @@
+doctype
+html
+  head
+    script(src="https://cdn.rawgit.com/oliver-moran/jimp/v0.2.27/browser/lib/jimp.min.js")
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js")
+    script(src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js")
+    script(src="javascripts/resizer.js")
+
+    title= title
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
+  body
+    header
+      h1 GummyFrog
+      g=' Here is my '+title+'.'
+
+      include nav.jade
+
+
+    div#stuff
+
+      input#filesToUpload(name='filesToUpload[]', type='file', multiple='' onchange="readURL(this);")
+      button(onClick="listFiles()") Run
+
+      div#fileList
+
+      div#resized
+
+
+    section#wrapper
+        footer
+          section.css-table
+            section.four-column
+              section.cell
+                p Upload images, then click Run.
