@@ -17,14 +17,9 @@ html
       include nav.jade
 
 
-    div#stuff
-
-      input#filesToUpload(name='filesToUpload[]', type='file', multiple='' onchange="readURL(this);")
-      button(onClick="listFiles()") Run
+    div#stuffHigh
 
       div#fileList
-
-      div#resized
 
 
     section#wrapper
@@ -32,4 +27,6 @@ html
           section.css-table
             section.four-column
               section.cell
-                p Upload images, then click Run.
+                p#resizeErrorText
+                input#filesToUpload(name='filesToUpload[]', type='file', multiple='')
+                button#runButton(onClick="listFiles()") Run
