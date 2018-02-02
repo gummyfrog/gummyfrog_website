@@ -23,6 +23,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(stylus.middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/node_jszip', express.static(__dirname + '/node_modules/jszip/'));
+
 
 app.use('/', index);
 app.use('/users', users);

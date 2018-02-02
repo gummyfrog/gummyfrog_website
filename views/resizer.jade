@@ -4,11 +4,13 @@ html
     script(src="https://cdn.rawgit.com/oliver-moran/jimp/v0.2.27/browser/lib/jimp.min.js")
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js")
     script(src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js")
+    script(src="https://cdn.rawgit.com/eligrey/Blob.js/0cef2746414269b16834878a8abc52eb9d53e6bd/Blob.js")
+    script(src="/node_jszip/dist/jszip.min.js")
+    script(src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.min.js")
     script(src="javascripts/resizer.js")
 
     title= title
     link(rel='stylesheet', href='/stylesheets/main.css')
-    link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
   body
     header
       h1 GummyFrog
@@ -16,7 +18,7 @@ html
 
       include nav.jade
 
-
+      
     div#stuffHigh
 
       div#fileList
@@ -28,5 +30,7 @@ html
             section.four-column
               section.cell
                 p#resizeErrorText
-                input#filesToUpload(name='filesToUpload[]', type='file', multiple='')
+                input#filesToUpload(name='filesToUpload[]', type='file', multiple='', onchange="reset()")
                 button#runButton(onClick="listFiles()") Run
+              section.cell
+                p Hello! This is a beta version of a small web-app I'm developing.
