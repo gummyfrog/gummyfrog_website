@@ -24,6 +24,7 @@ app.use(cookieParser());
 app.use(stylus.middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/node_jszip', express.static(__dirname + '/node_modules/jszip/'));
+app.use('/node_sylb-haiku', express.static(__dirname + '/node_modules/sylb-haiku/'));
 
 
 app.use('/', index);
