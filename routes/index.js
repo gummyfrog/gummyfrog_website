@@ -45,4 +45,11 @@ router.get('/resizer', function(req, res){
 });
 
 
+router.get('/map', function(req, res){
+  res.render('map', {
+    title: 'Map'
+  });
+});
+
+
 module.exports = router;
