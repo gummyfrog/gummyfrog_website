@@ -1,0 +1,82 @@
+body {
+  padding: 70px;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+* {margin: 0; padding: 0;}
+
+div {
+  margin: 20px;
+}
+
+ul {
+  list-style-type: none;
+  width: 500px;
+}
+
+h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+li a {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+
+li {
+  padding: 10px;
+  overflow: auto;
+}
+
+li:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+
+
+#filesToUpload {
+  font: 18px "Futura", Helvetica, Arial, sans-serif;
+}
+
+#runButton {
+  font: 18px "Futura", Helvetica, Arial, sans-serif;
+}
+
+
+
+#stuffHigh {
+  float: right;
+  max-width: 400px;
+  max-height: none;
+  margin-top: -300px;
+  margin-right: 65px;
+}
+
+
+#stuffMiddle {
+  float: right;
+  max-width: 400px;
+  max-height: none;
+  margin-top: -300px;
+  margin-right: 130px;
+}
+
+#stuff {
+  float: right;
+  margin-right: 65px;
+}
+
+#wrapper {
+  padding-top: 30px;
+}

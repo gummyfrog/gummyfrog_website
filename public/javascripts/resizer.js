@@ -1,3 +1,21 @@
+var zip = new JSZip();
+var imageFolder = zip.folder("images");
+
+var currentFileCount = 0;
+var zipFileCount = 0;
+
+function reset() {
+  currentFileCount = 0;
+  zipFileCount = 0;
+  zip = new JSZip();
+  imageFolder = zip.folder("images");
+  var elem = document.getElementById('zipbutton');
+  if(elem) {
+    elem.parentNode.removeChild(elem);
+  }
+
+}
+
 function listFiles() {
   var input = document.getElementById('filesToUpload');
   var list = document.getElementById('fileList');
@@ -8,7 +26,6 @@ function listFiles() {
   {
     list.removeChild(list.firstChild);
   }
-
 
   if(!input.files) {
     error.innerHTML = "Upload a file first!";
@@ -26,25 +43,60 @@ function listFiles() {
 
 
   // clear of errors!
-
-
-  //empty list for now...
-
   //for every file...
+
+
   for (var x = 0; x < input.files.length; x++)
   {
+    zipFileCount = x;
     readURL(input.files[x], x)
   	//add to list
 
+    var placeholderImg = document.createElement('img');
+    var name = document.createElement('h3');
+    name.innerHTML = 'File ' + (x + 1) + ':  ' + input.files[x].name;
   	var li = document.createElement('li');
+    placeholderImg.setAttribute('src', 'http://placehold.it/150x150');
+
+    li.append(placeholderImg);
+    li.append(name);
+
     li.id = input.files[x].name;
-  	li.innerHTML = 'File ' + (x + 1) + ':  ' + input.files[x].name;
+    placeholderImg.id = input.files[x].name + '-img';
+    name.id = input.files[x].name + '-name';
   	list.append(li);
+    console.log(x+1 + ' / ' + input.files.length);
   }
+  console.log('Done.')
 
 
 }
 
+function processedImageInZip() {
+  currentFileCount++;
+  if(currentFileCount == zipFileCount+1) {
+    console.log("Creating zip button...");
+    var parent = document.getElementById("wrapper");
+
+    var downloadZipButton = document.createElement("button");
+    downloadZipButton.innerHTML = "Download Zip"
+    downloadZipButton.setAttribute("id", "zipbutton")
+    parent.appendChild(downloadZipButton);
+
+    downloadZipButton.addEventListener ("click", function() {
+      downloadZip();
+    });
+
+  }
+}
+
+function downloadZip() {
+  zip.generateAsync({type:"blob"})
+  .then(function(content) {
+      console.log(zip.files);
+      saveAs(content, "resized-images.zip");
+  });
+}
 
 function readURL(input, index) {
   console.log('Processing:')
@@ -64,15 +116,24 @@ function readURL(input, index) {
               encase.download = 'resized-' + index + '-' + input.name
               encase.target = "_blank";
 
-              parent.innerHTML = ("")
+
+              //parent.innerHTML = ("")
               parent.appendChild(encase);
 
-              var img = document.createElement("img");
-              img.style.padding = "10px 20px";
-              img.style.width = "200px";
-              img.style.height = "200px";
+              var img = document.getElementById(input.name+'-img');
+              //img.style.padding = "10px 20px";
+              img.style.width = "150px";
+              img.style.height = "150px";
               img.setAttribute("src", src);
               img.setAttribute("href", src);
+
+              toDataURL(src, function(DataUrl) {
+                console.log(DataUrl);
+                imageFolder.file(input.name, DataUrl.split(',')[1], {base64: true});
+              });
+              console.log('Saving file');
+              processedImageInZip();
+
               encase.appendChild(img);
          });
        }).catch(function (err) {
@@ -81,4 +142,26 @@ function readURL(input, index) {
   };
 
   reader.readAsDataURL(input);
+}
+
+
+// not my code, i love you!
+function toDataURL(src, callback, outputFormat) {
+  var img = new Image();
+  img.crossOrigin = 'Anonymous';
+  img.onload = function() {
+    var canvas = document.createElement('CANVAS');
+    var ctx = canvas.getContext('2d');
+    var dataURL;
+    canvas.height = this.naturalHeight;
+    canvas.width = this.naturalWidth;
+    ctx.drawImage(this, 0, 0);
+    dataURL = canvas.toDataURL(outputFormat);
+    callback(dataURL);
+  };
+  img.src = src;
+  if (img.complete || img.complete === undefined) {
+    img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+    img.src = src;
+  }
 }
