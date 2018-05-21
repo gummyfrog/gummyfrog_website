@@ -26,6 +26,8 @@ socialText {
   top:-7px;
 }
 
+
+
 #fileList {
   list-style: square;
   list-style-position: inside;
@@ -59,6 +61,111 @@ socialText {
   margin-right: 65px;
 }
 
+#charts {
+  float: right;
+  width: 360px;
+  height: 300px;
+  margin-top: -400px;
+  margin-right: 65px;
+}
+
+#otherCharts {
+  float: left;
+  width: 500px;
+  height: 100px;
+  margin-top: -100;
+  margin-right: 65px;
+}
+
+#jstree li {
+  list-style-type: none;
+  color: #1d1a31;
+}
+
+ol {
+  list-style-type: none;
+}
+
+query-item {
+  font-size: 20px;
+}
+
+query-value {
+  color: #EC4A94 !important;
+}
+
+bracket {
+  color: #56B949 !important;
+}
+
+
+.depth1 {
+  background-color: #367ABD !important;
+}
+
+.depth2 {
+  background-color: #4CB2D4 !important;
+}
+
+
+.depth3 {
+  background-color: #9FD1F0 !important;
+}
+
+.depth4 {
+  background-color: #69C1FF !important;
+}
+
+.depth5 {
+  background-color: #00b842 !important;
+}
+
+.depth6 {
+  background-color: #6AE83A !important;
+}
+
+.depth7 {
+  background-color: #95EB00 !important;
+}
+
+.depth8 {
+  background-color: #fff950 !important;
+}
+
+
+.depth9 {
+  background-color: #FF9A08 !important;
+}
+
+
+.depth10 {
+  background-color: #EB7B2D !important;
+}
+
+.depth11 {
+  background-color: #EE4035 !important;
+}
+
+number {
+  color: #844D9E !important;
+}
+
+bool {
+  text-transform: uppercase;
+  color: #30499B !important;
+}
+
+string {
+  color: #367ABD !important;
+}
+
+
+#object {
+  text-align: left !important;
+  color: #30499B !important;
+  font-size: 18px;
+}
+
 
 #stuffMiddle {
   float: right;
@@ -75,4 +182,39 @@ socialText {
 
 #wrapper {
   padding-top: 30px;
+}
+
+.chartContainer {
+   max-width:200px;
+   height:150px;
+   display:block !important;
+}
+
+.accordion {
+  background-color:#30499B;
+  	-moz-border-radius:22px;
+  	-webkit-border-radius:22px;
+  	border-radius:22px;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:28px;
+  	padding:0px 32px;
+  	text-decoration:none;
+    height: 10px;
+    width: 5%;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active {
+  color: black;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
 }

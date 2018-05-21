@@ -5,6 +5,9 @@ html
     link(rel='stylesheet', href='/stylesheets/main.css')
     link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
     link(href='/stylesheets/jsontree-alt.css', rel='stylesheet')
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css")
+
+
   body
     header
       h1 GummyFrog
@@ -14,12 +17,15 @@ html
 
 
 
-    div#stuff
-      p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
-      p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
-      p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
+    div#charts
+      canvas#words-chart(width='100px', height='100px')
+      canvas#emojis-chart(width='100px', height='100px')
+      canvas#hashtags-chart(width='100px', height='100px')
+      canvas#type-chart(width='100px', height='100px')
+
 
     #jstree
+
 
 
 
@@ -27,28 +33,15 @@ html
         block content
         footer
           script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js")
-          script(src='javascripts/jsontree-alt.js')
+          script(src='javascripts/palette.js')
 
-          script.
+          script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js')
 
-            var jsonData = $.ajax({
-              url: 'https://rawgit.com/gummyfrog/frogJson/master/fopso.json',
-              dataType: 'json',
-            }).done(function (data) {
-              console.log(data);
-                var container = document.getElementById("jstree");
-                var tree = jsonTree.create(data, container);
-            });
+          script(src='javascripts/jsonDisplayer.js')
 
 
 
           section.css-table
             section.four-column
-              section.cell
-                p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
-              section.cell
-                p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
-              section.cell
-                p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
               section.cell
                 p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
