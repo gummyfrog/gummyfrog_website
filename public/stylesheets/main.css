@@ -55,7 +55,7 @@ socialText {
   float: right;
   max-width: 400px;
   max-height: none;
-  margin-top: -300px;
+  margin-top: -360px;
   margin-right: 65px;
 }
 
@@ -75,4 +75,16 @@ socialText {
 
 #wrapper {
   padding-top: 30px;
+}
+
+#galleryButton {
+  background-color: transparent;
+  border-style: none;
+  width: 240px;
+  height: 120px;
+}
+
+#galleryButtonWrapper {
+  padding-top: 20px;
+  padding-left: 15px;
 }

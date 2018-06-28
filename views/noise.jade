@@ -1,0 +1,34 @@
+doctype
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
+  body
+    header
+      h1 GummyFrog
+      g=' on '+title+'.'
+
+      include nav.jade
+
+      
+
+
+    div#stuffHigh(style="padding-right:12%; margin-top: -420px")
+      video#display(src = 'images/gallery.mp4' preload = "auto" width = "500" height = "500" controls)
+      div#galleryButtonWrapper
+        button#galleryButton  
+          img(src='images/continueshadow.png')
+      
+      script(src='javascripts/noiseGallery.js')
+
+
+
+    section#wrapper
+        footer
+          section.css-table
+            section.four-column
+              section.cell
+                p 
+              section.cell
+              

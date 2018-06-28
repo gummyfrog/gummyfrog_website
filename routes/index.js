@@ -32,6 +32,13 @@ router.get('/emojis', function(req, res){
   });
 });
 
+router.get('/noise', function(req, res){
+  res.render('noise', {
+    title: 'Noise Experiments'
+  });
+});
+
+
 router.get('/allEmojis', function(req, res){
   res.render('allEmojiPage', {
     title: 'Lots of Emoji Data'
@@ -41,6 +48,12 @@ router.get('/allEmojis', function(req, res){
 router.get('/resizer', function(req, res){
   res.render('resizer', {
     title: 'Instagram Image Formatter'
+  });
+});
+
+router.get('/dataDisplay', function(req, res){
+  res.render('display-json', {
+    title: 'Some Twitter Data'
   });
 });
 
