@@ -185,9 +185,24 @@ string {
 }
 
 .chartContainer {
+  padding-top: 10px;
    max-width:200px;
    height:150px;
    display:block !important;
+}
+
+.timeContainer {
+  padding-top: 15px;
+  max-width: 50%;
+  height: 360px;
+  display:block !important;
+}
+
+.barContainer {
+  padding-top: 10px;
+  max-width: 500px;
+  height: 600px;
+  display:block !important;
 }
 
 .accordion {
@@ -213,8 +228,6 @@ string {
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
-    padding: 0 18px;
-    background-color: white;
     display: none;
     overflow: hidden;
 }
