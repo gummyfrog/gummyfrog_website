@@ -82,6 +82,10 @@ socialText {
   color: #1d1a31;
 }
 
+li {
+  padding-top: 5px;
+}
+
 ol {
   list-style-type: none;
 }
@@ -159,6 +163,9 @@ string {
   color: #367ABD !important;
 }
 
+date {
+  color: #ffad64 !important;
+}
 
 #object {
   text-align: left !important;
@@ -201,7 +208,7 @@ string {
 .barContainer {
   padding-top: 10px;
   max-width: 500px;
-  height: 600px;
+  height: 300px;
   display:block !important;
 }
 

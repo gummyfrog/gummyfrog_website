@@ -176,10 +176,21 @@ function display(name, value) {
       return('Time Chart');
     case 'popular':
       return('Popular Tweets')
+    case 'config':
+      return('Search Configuration')
 
-    case '_query':
+    case 'childQueries':
+      return('Requests to Spawn: <number>' + value + '</number>');
+    case 'tooLow':
+      return('Low Frequency Definition: <number>' + value + '</number>');
+    case 'depth':
+      return('Search Depth Goal: <number>' + value + '</number>');
+
+    case 'searchInfo':
+      return('Misc. Info')
+    case 'query':
       return ('<query-item>Query:  <query-value>"'+value+'"</query-value></query-item>');
-    case '_filename':
+    case 'filename':
       return ('Unique ID: <string>' + value +'</string>')
     case 'collectedTweets':
       return ('Tweets Collected: <number>' + value + '</number>')
@@ -189,6 +200,19 @@ function display(name, value) {
       return('Associated Hashtags:');
     case 'hashtagObjs':
       return('Associated Hashtag Data:');
+    case 'count':
+      return('Tweet Goal: <number>' + value + '</number>')
+    case 'requestTime':
+      return('Requested: <date>' + moment(value).format('MMM Do : hh:mm:ss') + '</date>');
+    case 'startTime':
+      return('Search Start: <date>' + moment(value).format('MMM Do : hh:mm:ss') + '</date>');
+    case 'endTime':
+      return('Search End: <date>' + moment(value).format('MMM Do : hh:mm:ss') + '</date>');
+
+    case 'window_count':
+      return('Windows Elapsed: <number>' + value + '</number>')
+    case 'window_average':
+      return('Average Tweets per Window: <number>' + value + '</number>')
 
     case 'low_frequency':
       return('Low Frequency: <bool>' + value + '</bool>')
@@ -271,9 +295,9 @@ function crawl(object, depth, originalKey) {
 
     return returnHTML + '</div><bracket>}</bracket>';
 
-  } else {
+  } else{
 
-    returnHTML ='<button class="accordion depth'+depth+'">+</button> <br> <ol class="panel">'
+    returnHTML ='<button data-balloon="Click to show data." data-balloon-pos="right" class="accordion depth'+depth+'"></button> <br> <ol class="panel">'
 
     for(key in object) {
       if(typeof(object[key]) == 'object') {
@@ -309,7 +333,7 @@ var jsonDisplay = function(container, data) {
 
 
   var jsonData = $.ajax({
-    url: "https://rawgit.com/gummyfrog/frogJson/master/popularWorking.json",
+    url: "https://rawgit.com/gummyfrog/frogJson/master/flopp.json",
     dataType: "json",
   }).done(function (data) {
       moment().format();
