@@ -6,9 +6,6 @@ html
     link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
   body
     header
-      h1 GummyFrog
-      g=' on '+title+'.'
-
       include nav.jade
 
 
@@ -16,13 +13,13 @@ html
 
     div#stuffHigh
       textarea#inputBox(cols = 50, rows = 5) Copy paste an article, or something with a lot of words into this box.
-      textarea#haikuBox(cols = 50, rows = 5) Your haiku appears here.      
+      textarea#haikuBox(cols = 50, rows = 5) Your haiku appears here.
       button#haikuButton Haiku-ify
       button#trueHaikuButton True Haiku
 
       p#sylbData Sylb Data will show up here.
 
-      
+
       a.twitter-timeline(href='https://twitter.com/bot_inspiration?ref_src=twsrc%5Etfw' data-height="300" data-tweet-limit="6" data-chrome="nofooter noborder transparent") Tweets by bot_inspiration
       script(async='', src='https://platform.twitter.com/widgets.js', charset='utf-8')
 
@@ -30,7 +27,7 @@ html
     script(src="/javascripts/sylb-haiku-browser.js")
     script(src="javascripts/truehaikuscript.js")
 
-      
+
     section#wrapper
         footer
           section.css-table

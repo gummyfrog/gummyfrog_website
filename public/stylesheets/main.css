@@ -4,7 +4,14 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  text-transform: lowercase;
+  font: 21px "Open Sans", Helvetica;
+  color: #2F2C49;
+}
+
+p {
+  font: 21px "Open Sans", Helvetica;
+  font-weight: 400;
 }
 
 g{
@@ -12,9 +19,6 @@ g{
   font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-project {
-  color: #00b7ff;
-}
 
 tween {
   font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -26,6 +30,28 @@ socialText {
   top:-7px;
 }
 
+nav {
+  width: 325px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+.gum {
+  text-align: left;
+  font: 60px "Open Sans", Helvetica;
+  line-height: 0px;
+  font-weight: 600;
+}
+.gumtext {
+  padding: 0px;
+  background-color: #f9f7f6;
+  text-align: left;
+  font: 25px "Open Sans", Helvetica;
+  font-weight: 600;
+}
 
 
 #fileList {
@@ -77,13 +103,25 @@ socialText {
   margin-right: 65px;
 }
 
+.right {
+  padding-left: 15%;
+  float: right;
+}
+
+#jstree {
+  margin-top: 20px;
+}
+
 #jstree li {
   list-style-type: none;
   color: #1d1a31;
 }
 
 li {
-  padding-top: 5px;
+  font: 26px "Open Sans", Helvetica;
+  font-weight: 350;
+  text-transform: lowercase;
+  padding-top: 10px;
 }
 
 ol {
@@ -91,7 +129,6 @@ ol {
 }
 
 query-item {
-  font-size: 20px;
 }
 
 query-value {
@@ -99,55 +136,104 @@ query-value {
 }
 
 bracket {
-  color: #56B949 !important;
+  font: 26px "Open Sans", Helvetica;
+  text-transform: lowercase;
+  padding-top: 5px;
+  color: #30499B !important;
 }
 
 
-.depth1 {
+.accordion.depth1 {
   background-color: #367ABD !important;
 }
 
-.depth2 {
+.accordion.depth2 {
   background-color: #4CB2D4 !important;
 }
 
-
-.depth3 {
+.accordion.depth3 {
   background-color: #9FD1F0 !important;
 }
 
-.depth4 {
+.accordion.depth4 {
   background-color: #69C1FF !important;
 }
 
-.depth5 {
+.accordion.depth5 {
   background-color: #00b842 !important;
 }
 
-.depth6 {
+.accordion.depth6 {
   background-color: #6AE83A !important;
 }
 
-.depth7 {
+.accordion.depth7 {
   background-color: #95EB00 !important;
 }
 
-.depth8 {
+.accordion.depth8 {
   background-color: #fff950 !important;
 }
 
 
-.depth9 {
+.accordion.depth9 {
   background-color: #FF9A08 !important;
 }
 
 
-.depth10 {
+.accordion.depth10 {
   background-color: #EB7B2D !important;
 }
 
-.depth11 {
+.accordion.depth11 {
   background-color: #EE4035 !important;
+}
+
+
+bracket.depth1 {
+  color: #367ABD !important;
+}
+
+bracket.depth2 {
+  color: #4CB2D4 !important;
+}
+
+bracket.depth3 {
+  color: #9FD1F0 !important;
+}
+
+bracket.depth4 {
+  color: #69C1FF !important;
+}
+
+bracket.depth5 {
+  color: #00b842 !important;
+}
+
+bracket.depth6 {
+  color: #6AE83A !important;
+}
+
+bracket.depth7 {
+  color: #95EB00 !important;
+}
+
+bracket.depth8 {
+  color: #fff950 !important;
+}
+
+
+bracket.depth9 {
+  color: #FF9A08 !important;
+}
+
+
+bracket.depth10 {
+  color: #EB7B2D !important;
+}
+
+bracket.depth11 {
+  color: #EE4035 !important;
 }
 
 number {
@@ -167,10 +253,12 @@ date {
   color: #ffad64 !important;
 }
 
+
+
 #object {
+  padding-top: 11px;
   text-align: left !important;
   color: #30499B !important;
-  font-size: 18px;
 }
 
 
@@ -190,6 +278,7 @@ date {
 #wrapper {
   padding-top: 30px;
 }
+
 
 .chartContainer {
   padding-top: 10px;
@@ -214,27 +303,31 @@ date {
 
 .accordion {
   background-color:#30499B;
-  	-moz-border-radius:22px;
-  	-webkit-border-radius:22px;
-  	border-radius:22px;
-  	display:inline-block;
-  	cursor:pointer;
-  	color:#ffffff;
-  	font-family:Arial;
-  	font-size:28px;
-  	padding:0px 32px;
-  	text-decoration:none;
-    height: 10px;
-    width: 5%;
+  border-radius: 25px;
+  border-width: 5px;
+  cursor:pointer;
+  font-size:28px;
+  margin-top: -50px;
+  margin-left: 20px;
+  height: 15px;
+  width: 100px;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active {
   color: black;
+  height: 25px;
 }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
-    display: none;
     overflow: hidden;
+    opacity: 0;
+    height: 0;
+    transition: opacity 1s ease;
+}
+
+.panel.slap {
+  opacity: 1;
+  height: auto !important;
 }

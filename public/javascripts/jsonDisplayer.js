@@ -41,7 +41,7 @@ var chartFormat = function(data, name) {
 
 
   // console.log('making new chart with')
-  // console.log(Object.keys(data).sort(function(a,b){return data[b]-data[a]}))
+  console.log(Object.keys(data).sort(function(a,b){return data[b]-data[a]}))
   return obj;
 
 }
@@ -169,7 +169,7 @@ function display(name, value) {
     case 'types':
         return('Types');
     case 'data':
-      return('Data');
+      return('Data Collected:');
     case 'temp_times':
       return('Time Chart');
     case 'times':
@@ -177,7 +177,7 @@ function display(name, value) {
     case 'popular':
       return('Popular Tweets')
     case 'config':
-      return('Search Configuration')
+      return('configuration info:')
 
     case 'childQueries':
       return('Requests to Spawn: <number>' + value + '</number>');
@@ -187,7 +187,7 @@ function display(name, value) {
       return('Search Depth Goal: <number>' + value + '</number>');
 
     case 'searchInfo':
-      return('Misc. Info')
+      return('Time Info')
     case 'query':
       return ('<query-item>Query:  <query-value>"'+value+'"</query-value></query-item>');
     case 'filename':
@@ -233,8 +233,6 @@ var timeDataSets = [];
 var barsToRender = [];
 var barDataSets = [];
 
-
-
 function crawl(object, depth, originalKey) {
   if(depth > 20) {
     return "";
@@ -243,7 +241,7 @@ function crawl(object, depth, originalKey) {
   var returnHTML = '<div class="chartContainer">';
 
 
-  if(['emojis', 'words', 'hashtags', 'types'].includes(originalKey)) {
+  if(['emojis', 'words', 'hashtags'].includes(originalKey)) {
     // var id =(originalKey + '-' + Math.random() + '-' + depth);
     // var data = {};
     // for(key in object) {
@@ -256,6 +254,7 @@ function crawl(object, depth, originalKey) {
     // return returnHTML + '</div><bracket>}</bracket>';
     // just pie chart code
 
+    console.log('EMOJI/WORD/HASHTAGS')
     var id =(originalKey + '-' + Math.random() + '-' + depth);
     var data = {};
     for(key in object) {
@@ -266,6 +265,10 @@ function crawl(object, depth, originalKey) {
 
     dataSets.push(data);
     chartsToRender.push(id);
+
+    console.log(data);
+    console.log(id);
+
     returnHTML += '</div>';
 
     returnHTML += '<div class="barContainer">';
@@ -275,25 +278,39 @@ function crawl(object, depth, originalKey) {
 
     barDataSets.push(object);
     barsToRender.push(id);
-    return returnHTML + '</div><bracket>}</bracket>';
+
+    return returnHTML + '<bracket class="depth'+(depth)+'">}</bracket>';
+
+  } else if(originalKey == 'types') {
+
+    var id =(originalKey + '-' + Math.random() + '-' + depth);
+    var data = {};
+    for(key in object) {
+      data[key] = object[key];
+    }
+    returnHTML += '<canvas id="'+ id + '" width="200px" height="100px"></canvas>'
+
+    dataSets.push(data);
+    chartsToRender.push(id);
+
+    return returnHTML + '<bracket class="depth'+(depth)+'">}</bracket>';
 
   } else if(originalKey == 'times') {
 
     returnHTML = '<div class="timeContainer">';
     var id =(originalKey + '-' + Math.random() + '-' + depth);
     returnHTML += '<canvas id="'+ id + '" width="500px" height="250px"></canvas>'
-    console.log('carth')
-    console.log(object)
+    // console.log(object)
     timeDataSets.push(object);
     timesToRender.push(id);
-    return returnHTML + '</div><bracket>}</bracket>';
+    return returnHTML + '<bracket class="depth'+(depth)+'">}</bracket>';
 
   }
    else if(originalKey == 'popular') {
 
     returnHTML = '<div class ="tweet", tweetID="'+ object +'"></div>'
 
-    return returnHTML + '</div><bracket>}</bracket>';
+    return returnHTML + '<bracket class="depth'+(depth)+'">}</bracket>';
 
   } else{
 
@@ -301,13 +318,13 @@ function crawl(object, depth, originalKey) {
 
     for(key in object) {
       if(typeof(object[key]) == 'object') {
-        returnHTML += '<li id="object">' + display(key) + ' <bracket>{</bracket> </li>' + crawl(object[key], depth+1, key);
+        returnHTML += '<li id="object">' + display(key) + ' <bracket class="depth'+(depth+1)+'">{</bracket> </li>' + crawl(object[key], depth+1, key);
       } else {
-        returnHTML += ('<li> ' + display(key, object[key]) + '</li>')
+        returnHTML += ('<li class="depth'+depth+'"> ' + display(key, object[key]) + '</li>')
       }
     }
 
-    return (returnHTML + '</ol> <bracket>}</bracket>');
+    return (returnHTML + '</ol> <bracket class="depth'+(depth)+'">}</bracket>');
   }
 }
 
@@ -328,51 +345,57 @@ var jsonDisplay = function(container, data) {
 
 
   console.log(chartsToRender);
+  console.log(timesToRender);
+  console.log(barsToRender);
   container.innerHTML = returnHTML;
 }
 
 
   var jsonData = $.ajax({
-    url: "https://rawgit.com/gummyfrog/frogJson/master/flopp.json",
+    url: "https://rawgit.com/gummyfrog/frogJson/master/product-love42-formatted.json",
     dataType: "json",
   }).done(function (data) {
       moment().format();
       var container = document.getElementById("jstree");
+
       jsonDisplay(container, data);
+      console.log('Rendering Pies')
 
       for(c=0;c<chartsToRender.length;c++) {
         new Chart(document.getElementById(chartsToRender[c]), chartFormat(dataSets[c], ''));
       }
 
+      console.log('Rendering Time Charts')
       for(b=0;b<timesToRender.length;b++) {
         // timeFormat(timeDataSets[b], '')
         new Chart(document.getElementById(timesToRender[b]), timeFormat(timeDataSets[b], ''));
       }
 
+      console.log('Rendering Bar Charts')
       for(l=0;l<barsToRender.length;l++) {
         // timeFormat(timeDataSets[b], '')
         new Chart(document.getElementById(barsToRender[l]), barFormat(barDataSets[l], ''));
       }
 
 
-      window.onload = (function(){
-
-        var tweet = document.getElementById("tweet");
-        var id = tweet.getAttribute("tweetID");
-
-        twttr.widgets.createTweet(
-          id, tweet,
-          {
-            conversation : 'none',    // or all
-            cards        : 'hidden',  // or visible
-            linkColor    : '#cc0000', // default is blue
-            theme        : 'light'    // or dark
-          })
-        .then (function (el) {
-          el.contentDocument.querySelector(".footer").style.display = "none";
-        });
-
-      });
+      // window.onload = (function(){
+      //
+      //   var tweet = document.getElementById("tweet");
+      //   var id = tweet.getAttribute("tweetID");
+      //
+      //   twttr.widgets.createTweet(
+      //     id, tweet,
+      //     {
+      //       conversation : 'none',    // or all
+      //       cards        : 'hidden',  // or visible
+      //       linkColor    : '#cc0000', // default is blue
+      //       theme        : 'light'    // or dark
+      //     })
+      //   .then (function (el) {
+      //     el.contentDocument.querySelector(".footer").style.display = "none";
+      //   });
+      //
+      // });
 
       var acc = document.getElementsByClassName("accordion");
       var i;
@@ -389,11 +412,13 @@ var jsonDisplay = function(container, data) {
                 g++;
               /* Toggle between hiding and showing the active panel */
               var panel = this.parentNode.childNodes[g + 4];
-              if (panel.style.display === "block") {
-                  panel.style.display = "none";
-              } else {
-                  panel.style.display = "block";
-              }
+              panel.classList.toggle('slap')
+
+              // if (panel.style.height === "auto") {
+              //     panel.style.height = "200%";
+              // } else {
+              //     panel.style.height = "auto";
+              // }
           });
       }
 

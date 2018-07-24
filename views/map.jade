@@ -10,22 +10,12 @@ html
 
   body
     header
-      h1 GummyFrog
-      g=title
-
-      include nav.jade
-
-
-
-    div#charts
-      canvas#words-chart(width='100px', height='100px')
-      canvas#emojis-chart(width='100px', height='100px')
-      canvas#hashtags-chart(width='100px', height='100px')
-      canvas#type-chart(width='100px', height='100px')
+      div.right
+        include nav.jade
 
 
     #jstree
-      h3 Please wait a moment...
+      h1.gumtext Please wait a moment...
 
 
 
@@ -37,7 +27,6 @@ html
           script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js")
           script(src='javascripts/palette.js')
           script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js')
-
           script(src='javascripts/jsonDisplayer.js')
 
 
