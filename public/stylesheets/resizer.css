@@ -55,28 +55,23 @@ li:hover {
 
 
 
-#stuffHigh {
-  float: right;
-  max-width: 400px;
-  max-height: none;
-  margin-top: -300px;
-  margin-right: 65px;
-}
 
-
-#stuffMiddle {
-  float: right;
-  max-width: 400px;
-  max-height: none;
-  margin-top: -300px;
-  margin-right: 130px;
-}
-
-#stuff {
-  float: right;
-  margin-right: 65px;
-}
 
 #wrapper {
   padding-top: 30px;
+}
+
+#fileList {
+  list-style: square;
+  list-style-position: inside;
+  padding-right: 50%;
+  padding-top: 40px;
+}
+
+#filesToUpload {
+  font: 18px "Futura", Helvetica, Arial, sans-serif;
+}
+
+#runButton {
+  font: 18px "Futura", Helvetica, Arial, sans-serif;
 }

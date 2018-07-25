@@ -1,8 +1,5 @@
-
-
-var chartFormat = function(data, name) {
+var dataToPie = function(data, name) {
   var length = Object.keys(data).length;
-
   var obj =
   {
     type:"pie",
@@ -38,18 +35,11 @@ var chartFormat = function(data, name) {
       }
     }
   }
-
-
-  // console.log('making new chart with')
-  console.log(Object.keys(data).sort(function(a,b){return data[b]-data[a]}))
   return obj;
 
 }
-
-
-var timeFormat = function(data, name) {
+var dataToCartesian = function(data, name) {
   var newData = Object.keys(data).map(i => data[i]);
-
   var timeChartData = {
   			labels: newData.map(obj=> moment.unix(obj.x).format('MMM/DDD hh:mm:ss')),
   			datasets: [{
@@ -61,8 +51,6 @@ var timeFormat = function(data, name) {
   			}]
 
   		};
-
-
   var obj =
   {
     type:"line",
@@ -92,17 +80,10 @@ var timeFormat = function(data, name) {
       }
 		}
   }
-
-  console.log(newData.map(obj=> obj.x));
   return obj;
-
 }
-
-
-
-var barFormat = function(data, name) {
+var dataToBar = function(data, name) {
   var newData = Object.keys(data).map(i => data[i]);
-
   var barChartData = {
   			labels: Object.keys(data),
   			datasets: [{
@@ -114,8 +95,6 @@ var barFormat = function(data, name) {
   			}]
 
   		};
-
-
   var obj =
   {
     type:"horizontalBar",
@@ -141,22 +120,27 @@ var barFormat = function(data, name) {
 		}
   }
 
-  console.log(newData.map(obj=> obj.x));
   return obj;
-
 }
 
+var pieIDs = [], pieDatas = [], cartesianIDs = [], cartesianDatas = [], barIDs = [], barDatas = [];
 
+
+function type(value) {
+  return(' <val class="'+typeof(value)+'">' + value + '</val>')
+}
+
+function ID(key, depth) {
+  return (key + Math.random() + depth);
+}
 function display(name, value) {
 
   if(!isNaN(name)) {
     if(typeof(value) != 'undefined') {
-      return('Item ' + name +':  <string>' + value + '</string>');
+      return('Item '+name+':' + type(value));
     }
-    return('Item ' + name + ':');
-
+    return('Item '+ name+':');
   }
-
 
   switch(name) {
 
@@ -180,20 +164,20 @@ function display(name, value) {
       return('configuration info:')
 
     case 'childQueries':
-      return('Requests to Spawn: <number>' + value + '</number>');
+      return('Requests to Spawn:' + type(value) );
     case 'tooLow':
-      return('Low Frequency Definition: <number>' + value + '</number>');
+      return('Low Frequency Definition:' + type(value));
     case 'depth':
-      return('Search Depth Goal: <number>' + value + '</number>');
+      return('Search Depth Goal:' + type(value));
 
     case 'searchInfo':
       return('Time Info')
     case 'query':
-      return ('<query-item>Query:  <query-value>"'+value+'"</query-value></query-item>');
+      return ('Query:' + type(value));
     case 'filename':
-      return ('Unique ID: <string>' + value +'</string>')
+      return ('Unique ID:' + type(value))
     case 'collectedTweets':
-      return ('Tweets Collected: <number>' + value + '</number>')
+      return ('Tweets Collected:' + type(value))
     case 'currentDepth':
       return ('');
     case 'children':
@@ -201,37 +185,29 @@ function display(name, value) {
     case 'hashtagObjs':
       return('Associated Hashtag Data:');
     case 'count':
-      return('Tweet Goal: <number>' + value + '</number>')
+      return('Tweet Goal:' + type(value))
     case 'requestTime':
-      return('Requested: <date>' + moment(value).format('MMM Do : hh:mm:ss') + '</date>');
+      return('Requested: <val.date>' + moment(value).format('MMM Do : hh:mm:ss') + '</val>');
     case 'startTime':
-      return('Search Start: <date>' + moment(value).format('MMM Do : hh:mm:ss') + '</date>');
+      return('Search Start: <val.date>' + moment(value).format('MMM Do : hh:mm:ss') + '</val>');
     case 'endTime':
-      return('Search End: <date>' + moment(value).format('MMM Do : hh:mm:ss') + '</date>');
+      return('Search End: <val.date>' + moment(value).format('MMM Do : hh:mm:ss') + '</val>');
 
     case 'window_count':
-      return('Windows Elapsed: <number>' + value + '</number>')
+      return('Windows Elapsed:' + type(value))
     case 'window_average':
-      return('Average Tweets per Window: <number>' + value + '</number>')
+      return('Average Tweets per Window:' + type(value))
 
     case 'low_frequency':
-      return('Low Frequency: <bool>' + value + '</bool>')
+      return('Low Frequency:' + type(value))
 
     default:
-      return  (key + ' | ' + value);
+      return  (key + ' : ' + value);
   }
 
 
 }
 
-var chartsToRender = [];
-var dataSets = [];
-
-var timesToRender = [];
-var timeDataSets = [];
-
-var barsToRender = [];
-var barDataSets = [];
 
 function crawl(object, depth, originalKey) {
   if(depth > 20) {
@@ -240,82 +216,58 @@ function crawl(object, depth, originalKey) {
 
   var returnHTML = '<div class="chartContainer">';
 
-
   if(['emojis', 'words', 'hashtags'].includes(originalKey)) {
-    // var id =(originalKey + '-' + Math.random() + '-' + depth);
-    // var data = {};
-    // for(key in object) {
-    //   data[key] = object[key];
-    // }
-    // returnHTML += '<canvas id="'+ id + '" width="200px" height="100px"></canvas>'
-    //
-    // dataSets.push(data);
-    // chartsToRender.push(id);
-    // return returnHTML + '</div><bracket>}</bracket>';
-    // just pie chart code
-
-    console.log('EMOJI/WORD/HASHTAGS')
-    var id =(originalKey + '-' + Math.random() + '-' + depth);
+    var id = ID(originalKey, depth);
+    // converting data...
     var data = {};
     for(key in object) {
       data[key] = object[key];
     }
 
-    returnHTML += '<canvas id="'+ id + '" width="200px" height="100px"></canvas>'
+    returnHTML += '<canvas id="'+ id + '" width="200px" height="100px"></canvas> </div><div class="barContainer">'
+    pieDatas.push(data);
+    pieIDs.push(id);
 
-    dataSets.push(data);
-    chartsToRender.push(id);
+    id = ID(originalKey, depth);
+    returnHTML += '<canvas id="'+ id + '" width="500px" height="250px"></canvas></div><bracket class="depth'+(depth)+'">}</bracket>'
+    barDatas.push(object);
+    barIDs.push(id);
 
-    console.log(data);
-    console.log(id);
-
-    returnHTML += '</div>';
-
-    returnHTML += '<div class="barContainer">';
-
-    var id =(originalKey + '-' + Math.random() + '-' + depth);
-    returnHTML += '<canvas id="'+ id + '" width="500px" height="250px"></canvas>'
-
-    barDataSets.push(object);
-    barsToRender.push(id);
-
-    return returnHTML + '<bracket class="depth'+(depth)+'">}</bracket>';
+    return returnHTML;
 
   } else if(originalKey == 'types') {
-
-    var id =(originalKey + '-' + Math.random() + '-' + depth);
+    var id = ID(originalKey, depth);
+    // converting data
     var data = {};
     for(key in object) {
       data[key] = object[key];
     }
-    returnHTML += '<canvas id="'+ id + '" width="200px" height="100px"></canvas>'
 
-    dataSets.push(data);
-    chartsToRender.push(id);
+    returnHTML += '<canvas id="'+ id + '" width="200px" height="100px"></canvas></div><bracket class="depth'+(depth)+'">}</bracket>';
+    pieDatas.push(data);
+    pieIDs.push(id);
 
-    return returnHTML + '<bracket class="depth'+(depth)+'">}</bracket>';
+    return returnHTML;
 
   } else if(originalKey == 'times') {
-
     returnHTML = '<div class="timeContainer">';
-    var id =(originalKey + '-' + Math.random() + '-' + depth);
-    returnHTML += '<canvas id="'+ id + '" width="500px" height="250px"></canvas>'
+
+    var id = ID(originalKey, depth);
+    returnHTML += '<canvas id="'+ id + '" width="500px" height="250px"></canvas></div><bracket class="depth'+(depth)+'">}</bracket>'
     // console.log(object)
-    timeDataSets.push(object);
-    timesToRender.push(id);
-    return returnHTML + '<bracket class="depth'+(depth)+'">}</bracket>';
+    cartesianDatas.push(object);
+    cartesianIDs.push(id);
+
+    return returnHTML;
 
   }
    else if(originalKey == 'popular') {
 
-    returnHTML = '<div class ="tweet", tweetID="'+ object +'"></div>'
+    returnHTML = '<div class ="tweet", tweetID="'+ object +'"></div><bracket class="depth'+(depth)+'">}</bracket>'
+    return returnHTML;
 
-    return returnHTML + '<bracket class="depth'+(depth)+'">}</bracket>';
-
-  } else{
-
+  } else {
     returnHTML ='<button data-balloon="Click to show data." data-balloon-pos="right" class="accordion depth'+depth+'"></button> <br> <ol class="panel">'
-
     for(key in object) {
       if(typeof(object[key]) == 'object') {
         returnHTML += '<li id="object">' + display(key) + ' <bracket class="depth'+(depth+1)+'">{</bracket> </li>' + crawl(object[key], depth+1, key);
@@ -323,103 +275,78 @@ function crawl(object, depth, originalKey) {
         returnHTML += ('<li class="depth'+depth+'"> ' + display(key, object[key]) + '</li>')
       }
     }
-
     return (returnHTML + '</ol> <bracket class="depth'+(depth)+'">}</bracket>');
   }
 }
-
-
-
-var jsonDisplay = function(container, data) {
+function jsonDisplay(container, data) {
   var returnHTML = '';
 
   for(key in data) {
-
     if(typeof(data[key]) == 'object') {
       returnHTML += '<li id="object">' + display(key) + ' <bracket>{</bracket> </li>' + crawl(data[key], 0, key);
     } else {
       returnHTML += ('<li>' + display(key, data[key]) + '</li>')
     }
-
   }
 
-
-  console.log(chartsToRender);
-  console.log(timesToRender);
-  console.log(barsToRender);
   container.innerHTML = returnHTML;
 }
 
 
-  var jsonData = $.ajax({
-    url: "https://rawgit.com/gummyfrog/frogJson/master/product-love42-formatted.json",
-    dataType: "json",
-  }).done(function (data) {
-      moment().format();
-      var container = document.getElementById("jstree");
+var jsonData = $.ajax({
+  url: "https://rawgit.com/gummyfrog/frogJson/master/pimp.json",
+  dataType: "json",
+}).done(function (data) {
 
-      jsonDisplay(container, data);
-      console.log('Rendering Pies')
+  moment().format();
+  var container = document.getElementById("jstree");
+  jsonDisplay(container, data);
 
-      for(c=0;c<chartsToRender.length;c++) {
-        new Chart(document.getElementById(chartsToRender[c]), chartFormat(dataSets[c], ''));
-      }
+  for(c=0;c<pieIDs.length;c++) {
+    new Chart(document.getElementById(pieIDs[c]), dataToPie(pieDatas[c], ''));
+  }
 
-      console.log('Rendering Time Charts')
-      for(b=0;b<timesToRender.length;b++) {
-        // timeFormat(timeDataSets[b], '')
-        new Chart(document.getElementById(timesToRender[b]), timeFormat(timeDataSets[b], ''));
-      }
+  for(b=0;b<cartesianIDs.length;b++) {
+    new Chart(document.getElementById(cartesianIDs[b]), dataToCartesian(cartesianDatas[b], ''));
+  }
 
-      console.log('Rendering Bar Charts')
-      for(l=0;l<barsToRender.length;l++) {
-        // timeFormat(timeDataSets[b], '')
-        new Chart(document.getElementById(barsToRender[l]), barFormat(barDataSets[l], ''));
-      }
+  for(l=0;l<barIDs.length;l++) {
+    new Chart(document.getElementById(barIDs[l]), dataToBar(barDatas[l], ''));
+  }
 
+  // window.onload = (function(){
+  //
+  //   var tweet = document.getElementById("tweet");
+  //   var id = tweet.getAttribute("tweetID");
+  //
+  //   twttr.widgets.createTweet(
+  //     id, tweet,
+  //     {
+  //       conversation : 'none',    // or all
+  //       cards        : 'hidden',  // or visible
+  //       linkColor    : '#cc0000', // default is blue
+  //       theme        : 'light'    // or dark
+  //     })
+  //   .then (function (el) {
+  //     el.contentDocument.querySelector(".footer").style.display = "none";
+  //   });
+  //
+  // });
 
-      // window.onload = (function(){
-      //
-      //   var tweet = document.getElementById("tweet");
-      //   var id = tweet.getAttribute("tweetID");
-      //
-      //   twttr.widgets.createTweet(
-      //     id, tweet,
-      //     {
-      //       conversation : 'none',    // or all
-      //       cards        : 'hidden',  // or visible
-      //       linkColor    : '#cc0000', // default is blue
-      //       theme        : 'light'    // or dark
-      //     })
-      //   .then (function (el) {
-      //     el.contentDocument.querySelector(".footer").style.display = "none";
-      //   });
-      //
-      // });
+  var acc = document.getElementsByClassName("accordion");
+  var i;
 
-      var acc = document.getElementsByClassName("accordion");
-      var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
 
-      for (i = 0; i < acc.length; i++) {
-          acc[i].addEventListener("click", function() {
-              /* Toggle between adding and removing the "active" class,
-              to highlight the button that controls the panel */
-              this.classList.toggle("active");
+        var child = this;
+        var g = 0;
+        while( (child = child.previousSibling) != null )
+          g++;
+        var panel = this.parentNode.childNodes[g + 4];
+        panel.classList.toggle("transition")
 
-              var child = this;
-              var g = 0;
-              while( (child = child.previousSibling) != null )
-                g++;
-              /* Toggle between hiding and showing the active panel */
-              var panel = this.parentNode.childNodes[g + 4];
-              panel.classList.toggle('slap')
-
-              // if (panel.style.height === "auto") {
-              //     panel.style.height = "200%";
-              // } else {
-              //     panel.style.height = "auto";
-              // }
-          });
-      }
-
-  });
+    });
+  }
+});

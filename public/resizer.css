@@ -1,0 +1,32 @@
+#fileList {
+  list-style: square;
+  list-style-position: inside;
+  padding-right: 50%;
+  padding-top: 40px;
+}
+
+#filesToUpload {
+  font: 18px "Futura", Helvetica, Arial, sans-serif;
+}
+
+#runButton {
+  font: 18px "Futura", Helvetica, Arial, sans-serif;
+}
+
+#line {
+  padding-left: 26px;
+  font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#social {
+  width: 30px;
+  height: 30px;
+}
+
+#stuffHigh {
+  float: right;
+  max-width: 400px;
+  max-height: none;
+  margin-top: -300px;
+  margin-right: 65px;
+}
