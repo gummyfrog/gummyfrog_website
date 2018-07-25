@@ -9,7 +9,6 @@
   color: #1d1a31;
 }
 
-
 li {
   font: 26px "Open Sans", Helvetica;
   font-weight: 350;
@@ -27,7 +26,6 @@ bracket {
   padding-top: 5px;
   color: #30499B !important;
 }
-
 
 .accordion.depth1 {
   background-color: #367ABD !important;
@@ -166,29 +164,31 @@ bracket.depth11 {
 }
 
 .accordion {
-  display: inline-block;
   background-color:#30499B;
-  border-radius: 25px;
-  border-width: 5px;
+  border-radius: 15px;
   cursor:pointer;
-  font-size:28px;
-  margin-top: -50px;
+  font-size:2px;
   margin-left: 20px;
-  height: 15px;
-  width: 100px;
+  margin-top: 5px;
+  height: 25px;
+  width: 120px;
+  font-size: 18px;
+  color: white;
+  opacity: 0.8;
+  transition: opacity 1s ease;
 }
 
 .accordion.active {
-  color: black;
-  height: 25px;
+  color: white;
+  opacity: 1;
 }
 
 .panel {
-  height: 0;
-  opacity: 0;
+  height: 25px;
+  opacity: 0.3;
   transition: opacity 1s ease;
-
   overflow: hidden;
+
 }
 
 .panel.transition {

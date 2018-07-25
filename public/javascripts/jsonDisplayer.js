@@ -267,7 +267,7 @@ function crawl(object, depth, originalKey) {
     return returnHTML;
 
   } else {
-    returnHTML ='<button data-balloon="Click to show data." data-balloon-pos="right" class="accordion depth'+depth+'"></button> <br> <ol class="panel">'
+    returnHTML ='<button class="accordion depth'+depth+'">show more</button> <br> <ol class="panel">'
     for(key in object) {
       if(typeof(object[key]) == 'object') {
         returnHTML += '<li id="object">' + display(key) + ' <bracket class="depth'+(depth+1)+'">{</bracket> </li>' + crawl(object[key], depth+1, key);
@@ -294,7 +294,7 @@ function jsonDisplay(container, data) {
 
 
 var jsonData = $.ajax({
-  url: "https://rawgit.com/gummyfrog/frogJson/master/pimp.json",
+  url: "https://rawgit.com/gummyfrog/frogJson/master/pongo.json",
   dataType: "json",
 }).done(function (data) {
 
