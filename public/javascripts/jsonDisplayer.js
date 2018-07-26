@@ -45,7 +45,9 @@ var dataToCartesian = function(data, name) {
   			datasets: [{
   				label: 'Collected Tweets',
           fill: 'start',
-          borderColor: '#192466',
+          borderColor: '#0072c2',
+          pointBackgroundColor:'#94D6FF',
+          pointRadius: 3,
   				borderWidth: 1,
   				data: newData
   			}]
@@ -82,6 +84,7 @@ var dataToCartesian = function(data, name) {
   }
   return obj;
 }
+
 var dataToBar = function(data, name) {
   var newData = Object.keys(data).map(i => data[i]);
   var barChartData = {
@@ -153,7 +156,7 @@ function display(name, value) {
     case 'types':
         return('Types');
     case 'data':
-      return('Data Collected:');
+      return('data charts:');
     case 'temp_times':
       return('Time Chart');
     case 'times':
@@ -173,11 +176,11 @@ function display(name, value) {
     case 'searchInfo':
       return('Time Info')
     case 'query':
-      return ('Query:' + type(value));
+      return ('Searched for Tweets containing:' + type(value));
     case 'filename':
-      return ('Unique ID:' + type(value))
+      return ('Search Filename:' + type(value))
     case 'collectedTweets':
-      return ('Tweets Collected:' + type(value))
+      return ('Tweets Collected:' + type(value) + '<br><br>')
     case 'currentDepth':
       return ('');
     case 'children':
@@ -185,7 +188,7 @@ function display(name, value) {
     case 'hashtagObjs':
       return('Associated Hashtag Data:');
     case 'count':
-      return('Tweet Goal:' + type(value))
+      return('Tweets to collect:' + type(value))
     case 'requestTime':
       return('Requested: <val.date>' + moment(value).format('MMM Do : hh:mm:ss') + '</val>');
     case 'startTime':
@@ -199,7 +202,7 @@ function display(name, value) {
       return('Average Tweets per Window:' + type(value))
 
     case 'low_frequency':
-      return('Low Frequency:' + type(value))
+      return('search was too slow:' + type(value))
 
     default:
       return  (key + ' : ' + value);
@@ -267,7 +270,7 @@ function crawl(object, depth, originalKey) {
     return returnHTML;
 
   } else {
-    returnHTML ='<button class="accordion depth'+depth+'">show more</button> <br> <ol class="panel">'
+    returnHTML ='<button class="accordion depth'+depth+'">show</button> <br> <ol class="panel">'
     for(key in object) {
       if(typeof(object[key]) == 'object') {
         returnHTML += '<li id="object">' + display(key) + ' <bracket class="depth'+(depth+1)+'">{</bracket> </li>' + crawl(object[key], depth+1, key);
@@ -278,6 +281,8 @@ function crawl(object, depth, originalKey) {
     return (returnHTML + '</ol> <bracket class="depth'+(depth)+'">}</bracket>');
   }
 }
+
+
 function jsonDisplay(container, data) {
   var returnHTML = '';
 
@@ -337,6 +342,17 @@ var jsonData = $.ajax({
   var i;
 
   for (i = 0; i < acc.length; i++) {
+    var child = acc[i];
+    var p = 0;
+    while( (child = child.previousSibling) != null )
+      p++;
+
+    var panel = acc[i].parentNode.childNodes[p + 4];
+    if(panel.innerHTML == '') {
+      acc[i].innerHTML = 'empty';
+      acc[i].classList.add('empty');
+    }
+
     acc[i].addEventListener("click", function() {
         this.classList.toggle("active");
 
@@ -345,7 +361,11 @@ var jsonData = $.ajax({
         while( (child = child.previousSibling) != null )
           g++;
         var panel = this.parentNode.childNodes[g + 4];
-        panel.classList.toggle("transition")
+        panel.classList.toggle("transition");
+
+        if(panel.innerHTML == '') {
+          this.classList.toggle("active");
+        }
 
     });
   }

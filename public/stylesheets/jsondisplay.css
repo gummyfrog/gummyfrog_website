@@ -20,6 +20,15 @@ ol {
   list-style-type: none;
 }
 
+li:has(>ol:empty) {
+  opacity: 0.2;
+}
+
+ol:empty {
+  height: 0px !important;
+
+}
+
 bracket {
   font: 26px "Open Sans", Helvetica;
   text-transform: lowercase;
@@ -124,7 +133,6 @@ bracket.depth11 {
 }
 
 .boolean {
-  text-transform: uppercase;
   color: #30499B !important;
 }
 
@@ -134,6 +142,10 @@ bracket.depth11 {
 
 .date {
   color: #ffad64 !important;
+}
+
+.empty {
+  opacity: 0.2 !important;
 }
 
 #object {
@@ -166,14 +178,19 @@ bracket.depth11 {
 .accordion {
   background-color:#30499B;
   border-radius: 15px;
+  border-width: 3px;
+
   cursor:pointer;
-  font-size:2px;
   margin-left: 20px;
   margin-top: 5px;
-  height: 25px;
-  width: 120px;
-  font-size: 18px;
-  color: white;
+
+  height: 30px;
+  width: 100px;
+
+  font-size: 17px;
+  text-align: left;
+  line-height: 10px;
+
   opacity: 0.8;
   transition: opacity 1s ease;
 }
@@ -181,6 +198,7 @@ bracket.depth11 {
 .accordion.active {
   color: white;
   opacity: 1;
+  text-align: right;
 }
 
 .panel {
