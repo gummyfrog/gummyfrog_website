@@ -33,6 +33,7 @@ bracket {
   font: 26px "Open Sans", Helvetica;
   text-transform: lowercase;
   padding-top: 5px;
+  display: none !important;
   color: #30499B !important;
 }
 
