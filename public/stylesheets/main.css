@@ -30,6 +30,7 @@ socialText {
   top:-7px;
 }
 
+
 nav {
   width: 325px;
 }
@@ -108,14 +109,6 @@ ul {
   float: right;
 }
 
-#jstree {
-  margin-top: 20px;
-}
-
-#jstree li {
-  list-style-type: none;
-  color: #1d1a31;
-}
 
 li {
   font: 26px "Open Sans", Helvetica;
@@ -126,139 +119,6 @@ li {
 
 ol {
   list-style-type: none;
-}
-
-query-item {
-}
-
-query-value {
-  color: #EC4A94 !important;
-}
-
-bracket {
-  font: 26px "Open Sans", Helvetica;
-  text-transform: lowercase;
-  padding-top: 5px;
-  color: #30499B !important;
-}
-
-
-.accordion.depth1 {
-  background-color: #367ABD !important;
-}
-
-.accordion.depth2 {
-  background-color: #4CB2D4 !important;
-}
-
-.accordion.depth3 {
-  background-color: #9FD1F0 !important;
-}
-
-.accordion.depth4 {
-  background-color: #69C1FF !important;
-}
-
-.accordion.depth5 {
-  background-color: #00b842 !important;
-}
-
-.accordion.depth6 {
-  background-color: #6AE83A !important;
-}
-
-.accordion.depth7 {
-  background-color: #95EB00 !important;
-}
-
-.accordion.depth8 {
-  background-color: #fff950 !important;
-}
-
-
-.accordion.depth9 {
-  background-color: #FF9A08 !important;
-}
-
-
-.accordion.depth10 {
-  background-color: #EB7B2D !important;
-}
-
-.accordion.depth11 {
-  background-color: #EE4035 !important;
-}
-
-
-bracket.depth1 {
-  color: #367ABD !important;
-}
-
-bracket.depth2 {
-  color: #4CB2D4 !important;
-}
-
-bracket.depth3 {
-  color: #9FD1F0 !important;
-}
-
-bracket.depth4 {
-  color: #69C1FF !important;
-}
-
-bracket.depth5 {
-  color: #00b842 !important;
-}
-
-bracket.depth6 {
-  color: #6AE83A !important;
-}
-
-bracket.depth7 {
-  color: #95EB00 !important;
-}
-
-bracket.depth8 {
-  color: #fff950 !important;
-}
-
-
-bracket.depth9 {
-  color: #FF9A08 !important;
-}
-
-
-bracket.depth10 {
-  color: #EB7B2D !important;
-}
-
-bracket.depth11 {
-  color: #EE4035 !important;
-}
-
-number {
-  color: #844D9E !important;
-}
-
-bool {
-  text-transform: uppercase;
-  color: #30499B !important;
-}
-
-string {
-  color: #367ABD !important;
-}
-
-date {
-  color: #ffad64 !important;
-}
-
-
-
-#object {
-  padding-top: 11px;
-  text-align: left !important;
-  color: #30499B !important;
 }
 
 
@@ -277,57 +137,4 @@ date {
 
 #wrapper {
   padding-top: 30px;
-}
-
-
-.chartContainer {
-  padding-top: 10px;
-   max-width:200px;
-   height:150px;
-   display:block !important;
-}
-
-.timeContainer {
-  padding-top: 15px;
-  max-width: 50%;
-  height: 360px;
-  display:block !important;
-}
-
-.barContainer {
-  padding-top: 10px;
-  max-width: 500px;
-  height: 300px;
-  display:block !important;
-}
-
-.accordion {
-  background-color:#30499B;
-  border-radius: 25px;
-  border-width: 5px;
-  cursor:pointer;
-  font-size:28px;
-  margin-top: -50px;
-  margin-left: 20px;
-  height: 15px;
-  width: 100px;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active {
-  color: black;
-  height: 25px;
-}
-
-/* Style the accordion panel. Note: hidden by default */
-.panel {
-    overflow: hidden;
-    opacity: 0;
-    height: 0;
-    transition: opacity 1s ease;
-}
-
-.panel.slap {
-  opacity: 1;
-  height: auto !important;
 }
