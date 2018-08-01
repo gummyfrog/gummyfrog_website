@@ -203,7 +203,7 @@ bracket.depth11 {
 }
 
 .panel {
-  height: 38px;
+  height: 36px;
   opacity: 0.3;
   transition: opacity 1s ease;
   overflow: hidden;
