@@ -10,7 +10,7 @@
 }
 
 li {
-  font: 26px "Open Sans", Helvetica;
+  font: 25px "Open Sans", Helvetica;
   font-weight: 350;
   text-transform: lowercase;
   padding-top: 10px;
@@ -150,8 +150,8 @@ bracket.depth11 {
 }
 
 #object {
-  padding-top: 11px;
-  text-align: left !important;
+/*  padding-top: 11px;
+*/  text-align: left !important;
   color: #30499B !important;
 }
 
@@ -164,7 +164,7 @@ bracket.depth11 {
 
 .timeContainer {
   padding-top: 15px;
-  max-width: 50%;
+  max-width: 500px;
   height: 360px;
   display:block !important;
 }
@@ -207,6 +207,9 @@ bracket.depth11 {
   opacity: 0.3;
   transition: opacity 1s ease;
   overflow: hidden;
+
+  margin-top: 0px;
+  margin-bottom: 0px;
 
 }
 
