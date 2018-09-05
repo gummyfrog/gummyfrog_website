@@ -3,24 +3,15 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/main.css')
-    link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
+    
   body
-    header
-      block content
-      include nav.jade
-
-
-
-    div#stuffHigh
-      img.image(src='/images/sphere.png')
-
-    section#wrapper
-        footer
-          section.css-table
-            section.four-column
-              section.cell
-                p Hello! I'm Neil C.<br/>I program things for humans, and things related to language.
-                p This is a website where you can see my work.<br/>It's full of my projects. I made all of them myself!
-              section.cell
-                p In case you were interested, this website is powered by <a href="https://github.com/expressjs/express")> Express</a>, <a href="https://github.com/pugjs/pug")> Jade/Pug</a> and <a href="https://nodejs.org/en/")> Node.js.</a>
-                p You can reach me at neilsemail@me.com.
+    include nav.jade
+    div.content
+      p(style="white-space:pre-line;").
+        Hi, I'm Neil C.
+        This is a website where you can see my work. I made all this stuff!
+        You can reach me at neilsemail@me.com.
+        
+        If you're interested, this website is powered by <a href="https://github.com/expressjs/express")>Express</a>, <a href="https://github.com/pugjs/pug")>Jade/Pug</a> and <a href="https://nodejs.org/en/")>Node.js.</a>
+          
+      img(src="images/sphere.png" style="height: 120px; width:120px;")

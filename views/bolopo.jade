@@ -3,29 +3,46 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/main.css')
-    link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
+    link(rel='stylesheet', href='/stylesheets/bolopo.css')
+
   body
-    header
-      div.right
-        include nav.jade
+    include nav.jade
 
+    div.content
+    
+      div.contentleft
+        p(style="white-space:pre-line;").
+          <quote>"do you summer view
+          at my days with dark we your
+          sweetly fallen our"
+          <i>-bolopo dragonslayer</i></quote>
+          
+          Bolopo Dragonslayer is an omniscient being that enjoys writing haikus.
+          His current form on this mortal plane is a Twitter account.
+                    
+                    
+          The bulk of the haiku generation is done by Sylb, a syllable sorting module I designed.
+          
+          In Bolopo's case, Sylb generates haikus out of a large collection of random words taken from random Tweets.
+          Sylb can generate haikus out of just about anything, though.
+          
+          There's an interactive version of Sylb on the right side of this page. Try it out!
+          
+          You can pay your respects to Bolopo <a href="https://www.twitter.com/bot_inspiration">here.</a>
+                  
+          
+      div.contentright
+        br
+        textarea#inputBox(cols = 50, rows = 5) Copy paste something with a lot of words (article about Brutalism, scientific paper, secret diary entry) here.
+        textarea#haikuBox(cols = 50, rows = 5) Haiku appears here.
+        br
+        button#haikuButton Haiku-ify
+        button#trueHaikuButton True Haiku
 
+        p#sylbData Sylb Data will show up here.
 
-
-    div
-      div.text
-        p hello i was accidentally using an anchor tag lol lmao hello. Hello. This is what is happening. Fuck you. Fuck you. This is how long it is. This wraps in the editor, thank god. Fuck you. u are being rude. u are rude. iu are beina gur.
-
-
-      textarea#inputBox(cols = 50, rows = 5) Copy paste an article, or something with a lot of words into this box.
-      textarea#haikuBox(cols = 50, rows = 5) Your haiku appears here.
-      button#haikuButton Haiku-ify
-      button#trueHaikuButton True Haiku
-
-      p#sylbData Sylb Data will show up here.
-
-      a.twitter-timeline(href='https://twitter.com/bot_inspiration?ref_src=twsrc%5Etfw' data-height="300" data-tweet-limit="6" data-chrome="nofooter noborder transparent") Tweets by bot_inspiration
-      script(async='', src='https://platform.twitter.com/widgets.js', charset='utf-8')
+        a.twitter-timeline(href='https://twitter.com/bot_inspiration?ref_src=twsrc%5Etfw' data-height="300" data-tweet-limit="6" data-chrome="nofooter noborder transparent") Tweets by bot_inspiration
+        script(async='', src='https://platform.twitter.com/widgets.js', charset='utf-8')
 
 
     script(src="/javascripts/sylb-haiku-browser.js")

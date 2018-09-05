@@ -12,13 +12,6 @@ router.get('/', function(req, res){
 });
 
 
-router.get('/contact', function(req, res){
-  res.render('contact', {
-    title: 'Contact'
-  });
-});
-
-
 router.get('/bolopo', function(req, res){
   res.render('bolopo', {
     title: 'Bolopo Dragonslayer'
@@ -32,11 +25,6 @@ router.get('/emojis', function(req, res){
   });
 });
 
-router.get('/allEmojis', function(req, res){
-  res.render('allEmojiPage', {
-    title: 'Lots of Emoji Data'
-  });
-});
 
 router.get('/resizer', function(req, res){
   res.render('resizer', {
@@ -44,10 +32,16 @@ router.get('/resizer', function(req, res){
   });
 });
 
-
 router.get('/map', function(req, res){
   res.render('map', {
     title: 'Map'
+  });
+});
+
+
+router.get('/frogeye', function(req, res){
+  res.render('frogeye', {
+    title: 'COMING SOON'
   });
 });
 

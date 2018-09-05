@@ -1,0 +1,17 @@
+#sylbData {
+  font: 21px "Helvetica Neue", sans-serif;
+  font-weight: 200;
+}
+
+#inputBox {
+  height: 300px;
+}
+
+#haikuBox {
+  height: 120px;
+}
+
+quote {
+  font: 21px "Helvetica Neue", sans-serif;
+  font-weight: 200;
+}

@@ -12,6 +12,7 @@ var jsonData = $.ajax({
   dataType: 'json',
 }).done(function (data) {
 
+  data.options.legend = {display: false};
   new Chart(document.getElementById("emoji-chart1"), data)
 
 });
@@ -20,7 +21,7 @@ var jsonData = $.ajax({
   url: 'https://api.myjson.com/bins/' + random(),
   dataType: 'json',
 }).done(function (data) {
-
+  data.options.legend = {display: false};
   new Chart(document.getElementById("emoji-chart2"), data)
 
 });

@@ -1,77 +1,33 @@
-body {
-  padding: 70px;
-  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+#fileList {
+  list-style: none;
+  margin: auto;
 }
 
-a {
-  color: #00b7ff;
-}
-
-* {margin: 0; padding: 0;}
-
-div {
-  margin: 20px;
-}
-
-ul {
-  list-style-type: none;
-  width: 500px;
-}
-
-h3 {
-  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
-}
-
-li img {
-  float: left;
-  margin: 0 15px 0 0;
-}
-
-li a {
-  float: left;
-  margin: 0 15px 0 0;
-}
-
-
-li {
-  padding: 10px;
-  overflow: auto;
-}
-
-li:hover {
-  background: #eee;
+#fileList li:hover {
+  background-color: #eeee;
   cursor: pointer;
 }
 
+#fileList li {
+  height: 200px;
+  width: 200px;
+  padding-bottom: 100px;
+  margin: auto;
+}
 
 
 #filesToUpload {
-  font: 18px "Futura", Helvetica, Arial, sans-serif;
+  font: 15px "Open Sans", Helvetica;
 }
 
 #runButton {
-  font: 18px "Futura", Helvetica, Arial, sans-serif;
+  font: 15px "Open Sans", Helvetica;
 }
 
-
-
-
-
-#wrapper {
-  padding-top: 30px;
+#zipbutton {
+  font: 15px "Open Sans", Helvetica;
 }
 
-#fileList {
-  list-style: square;
-  list-style-position: inside;
-  padding-right: 50%;
-  padding-top: 40px;
-}
-
-#filesToUpload {
-  font: 18px "Futura", Helvetica, Arial, sans-serif;
-}
-
-#runButton {
-  font: 18px "Futura", Helvetica, Arial, sans-serif;
+.contentright {
+  max-height: 600px;
 }

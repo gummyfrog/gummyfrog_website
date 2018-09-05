@@ -31,21 +31,19 @@ function listFiles() {
     error.innerHTML = "Upload a file first!";
   }
 
-
+  console.log(input.files);
 
   for (var i=0; i<input.files.length;i++) {
     if (input.files[i].type != 'image/png' && input.files[i].type != 'image/jpeg') {
-      console.log(input.files[i].type);
-      error.innerHTML = "PNGs and JPEGs only, please.<br/>" + input.files[i].name + " is " + input.files[i].type;
+      error.innerHTML = input.files[i].name + " is a '" + input.files[i].type + "' file.<br>Please only upload PNGs and JPEGs!";
       return;
     }
   }
 
-
   // clear of errors!
   //for every file...
 
-
+  console.log("Starting...");
   for (var x = 0; x < input.files.length; x++)
   {
     zipFileCount = x;
@@ -53,7 +51,7 @@ function listFiles() {
   	//add to list
 
     var placeholderImg = document.createElement('img');
-    var name = document.createElement('h3');
+    var name = document.createElement('p');
     name.innerHTML = 'File ' + (x + 1) + ':  ' + input.files[x].name;
   	var li = document.createElement('li');
     placeholderImg.setAttribute('src', 'http://placehold.it/150x150');
@@ -76,7 +74,7 @@ function processedImageInZip() {
   currentFileCount++;
   if(currentFileCount == zipFileCount+1) {
     console.log("Creating zip button...");
-    var parent = document.getElementById("wrapper");
+    var parent = document.getElementById("zipButtonGoesHere");
 
     var downloadZipButton = document.createElement("button");
     downloadZipButton.innerHTML = "Download Zip"

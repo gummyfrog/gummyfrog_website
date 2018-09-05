@@ -3,35 +3,36 @@ html
   head
     script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-
     title= title
     link(rel='stylesheet', href='/stylesheets/main.css')
-    link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
+    link(rel='stylesheet', href='/stylesheets/emojis.css')
+    
   body
-    header
-      include nav.jade
+    include nav.jade
+    div.content
+      div.contentright
+      
+        div.wrapper
+          canvas#emoji-chart1(width='400', height='600')
+        div.wrapper
+          canvas#emoji-chart2(width='400', height='600')
+
+        script(src='javascripts/script.js')
 
 
 
-
-    div#stuffHigh
-      canvas#emoji-chart1(width='400', height='600')
-      canvas#emoji-chart2(width='400', height='600')
-
-      script(src='javascripts/script.js')
-
-
-
-
-    section#wrapper
-        footer
-          section.css-table
-            section.four-column
-              section.cell
-                p Over the course of two weeks in<br/>early November, I ran a small scale<br/>data mining operation on Twitter.<br/>I searched for Tweets containing<br/> emojis, and collected the words in <br/>the Tweet, sorted by the emoji.
-                p It was a wonderful learning<br/>experience for me, and the data<br/>reveals some interesting trends.
-                p The emojis with the most eccentric<br/> word distribution are associated<br/> with love, like the heart eyes and kisses.<br/> For these emojis, the word 'love' is used<br/> around 130% more than other words. <br/> The heart emoji are the worst<br/> offenders.
-                p 'Love ranks high across<br/> all emojis.
-              section.cell
-                p Tip: Reload the page to see new data.
-                p 'amp' is an error in the word collection, <br/>not an actual word.
+      div.contentleft
+        p(style="white-space:pre-line;").
+          Over the course of two weeks in early November, I collected data from Twitter on emoji/word correlation.
+          
+            
+          The idea is that certain emojis are going to be associated with certain words. 
+          If you look at the Burger Emoji, you'd see a lot of burger words.            
+          
+          On the right side of this page are some graphs showing the most frequent words associated with an emoji.
+          Reload the page to get new graphs!
+          
+          Hover over each segment of the graph to get more info.
+          
+          This small project has expanded into FROGEYE, the crystal ball for the ultimate socialite, which you can see <a href="">here.</a>
+          
