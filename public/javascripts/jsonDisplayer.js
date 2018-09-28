@@ -173,6 +173,14 @@ function display(name, value) {
     case 'depth':
       return('Search Depth Goal:' + type(value));
 
+    case 'positiveTweets':
+      return('Positive Tweets:' + type(value));
+    case 'neutralTweets':
+      return('Neutral Tweets:' + type(value));
+    case 'negativeTweets':
+      return('Negative Tweets:' + type(value));
+
+
     case 'searchInfo':
       return('Time Info')
     case 'query':
