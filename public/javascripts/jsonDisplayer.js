@@ -307,7 +307,7 @@ function jsonDisplay(container, data) {
 
 
 var jsonData = $.ajax({
-  url: "https://rawgit.com/gummyfrog/frogJson/master/slurp.json",
+  url: "https://rawgit.com/gummyfrog/frogJson/master/sclap.json",
   dataType: "json",
 }).done(function (data) {
 
