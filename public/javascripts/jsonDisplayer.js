@@ -41,18 +41,18 @@ var dataToPie = function(data, name) {
 var dataToCartesian = function(data, name) {
   var newData = Object.keys(data).map(i => data[i]);
   var timeChartData = {
-  			labels: newData.map(obj=> moment.unix(obj.x).format('MMM/DDD hh:mm:ss')),
-  			datasets: [{
-  				label: 'Collected Tweets',
+        labels: newData.map(obj=> moment.unix(obj.x).format('MMM/DDD hh:mm:ss')),
+        datasets: [{
+          label: 'Collected Tweets',
           fill: 'start',
           borderColor: '#0072c2',
           pointBackgroundColor:'#94D6FF',
           pointRadius: 3,
-  				borderWidth: 1,
-  				data: newData
-  			}]
+          borderWidth: 1,
+          data: newData
+        }]
 
-  		};
+      };
   var obj =
   {
     type:"line",
@@ -80,7 +80,7 @@ var dataToCartesian = function(data, name) {
         bodyFontSize:20,
         positionMode:"nearest"
       }
-		}
+    }
   }
   return obj;
 }
@@ -88,16 +88,16 @@ var dataToCartesian = function(data, name) {
 var dataToBar = function(data, name) {
   var newData = Object.keys(data).map(i => data[i]);
   var barChartData = {
-  			labels: Object.keys(data),
-  			datasets: [{
-  				label: '',
+        labels: Object.keys(data),
+        datasets: [{
+          label: '',
           borderColor: '#192466',
-  				borderWidth: 1,
-  				data: newData,
+          borderWidth: 1,
+          data: newData,
           backgroundColor:palette('tol-dv', newData.length).map(color=>'#' + color).reverse()
-  			}]
+        }]
 
-  		};
+      };
   var obj =
   {
     type:"horizontalBar",
@@ -120,7 +120,7 @@ var dataToBar = function(data, name) {
         bodyFontSize:20,
         positionMode:"nearest"
       }
-		}
+    }
   }
 
   return obj;
@@ -174,11 +174,11 @@ function display(name, value) {
       return('Search Depth Goal:' + type(value));
 
     case 'positiveTweets':
-      return('Positive Tweets:' + type(value));
+      return('Positive Tweets:' + type(value) + '%');
     case 'neutralTweets':
-      return('Neutral Tweets:' + type(value));
+      return('Neutral Tweets:' + type(value) + '%');
     case 'negativeTweets':
-      return('Negative Tweets:' + type(value));
+      return('Negative Tweets:' + type(value) + '%');
 
 
     case 'searchInfo':
@@ -273,8 +273,21 @@ function crawl(object, depth, originalKey) {
 
   }
    else if(originalKey == 'popular') {
+    var arr = []
+    while(arr.length < 4){
+        var randomnumber = Math.floor(Math.random()*Object.keys(object).length) + 1;
+        if(arr.indexOf(randomnumber) > -1) continue;
+        arr[arr.length] = randomnumber;
+    }
 
-    returnHTML = '<div class ="tweet", tweetID="'+ object +'"></div><bracket class="depth'+(depth)+'">}</bracket>'
+
+    returnHTML = '<li class="tweetList, depth'+depth+'">'
+    for(i=0;i<arr.length;i++) {
+        returnHTML += '<div class="tweet", tweetID="'+ object[arr[i]] +'"></div>'
+
+    }
+    returnHTML += '</li>'
+
     return returnHTML;
 
   } else {
@@ -307,7 +320,7 @@ function jsonDisplay(container, data) {
 
 
 var jsonData = $.ajax({
-  url: "https://rawgit.com/gummyfrog/frogJson/master/aplme.json",
+  url: "https://rawgit.com/gummyfrog/frogJson/master/sloop.json",
   dataType: "json",
 }).done(function (data) {
 
@@ -327,24 +340,25 @@ var jsonData = $.ajax({
     new Chart(document.getElementById(barIDs[l]), dataToBar(barDatas[l], ''));
   }
 
-  // window.onload = (function(){
-  //
-  //   var tweet = document.getElementById("tweet");
-  //   var id = tweet.getAttribute("tweetID");
-  //
-  //   twttr.widgets.createTweet(
-  //     id, tweet,
-  //     {
-  //       conversation : 'none',    // or all
-  //       cards        : 'hidden',  // or visible
-  //       linkColor    : '#cc0000', // default is blue
-  //       theme        : 'light'    // or dark
-  //     })
-  //   .then (function (el) {
-  //     el.contentDocument.querySelector(".footer").style.display = "none";
-  //   });
-  //
-  // });
+
+  var elements = document.getElementsByClassName("tweet");
+  for(var i=0; i<elements.length; i++) {
+    var tweet = elements[i];
+    var id = tweet.getAttribute("tweetID")
+    if(twttr != undefined) {
+      twttr.widgets.createTweet(
+      id, tweet,
+      {
+        conversation : 'none',    // or all
+        cards        : 'hidden',  // or visible
+        linkColor    : '#cc0000', // default is blue
+        theme        : 'light'    // or dark
+      });
+    }
+  }
+
+
+
 
   var acc = document.getElementsByClassName("accordion");
   var i;

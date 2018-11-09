@@ -11,6 +11,11 @@ var users = require('./routes/users');
 
 var app = express();
 
+var statuscache = require('./src/statusCache.js')
+
+const statusCache = new statuscache();
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -29,6 +34,16 @@ app.use('/node_sylb-haiku', express.static(__dirname + '/node_modules/sylb-haiku
 
 app.use('/', index);
 app.use('/users', users);
+
+
+app.get('/site', function (req, res) {
+	res.json(statusCache.json);
+})
+
+app.post('/site', async function (req, res) {
+	statusCache.push(req.body);
+	res.send('Got it...');
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

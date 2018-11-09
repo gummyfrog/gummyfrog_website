@@ -29,6 +29,10 @@
 
 }
 
+.tweet {
+  text-transform: none !important;
+}
+
 bracket {
   font: 26px "Open Sans", Helvetica;
   text-transform: lowercase;
