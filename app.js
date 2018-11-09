@@ -43,6 +43,7 @@ app.get('/site', function (req, res) {
 
 app.post('/site', async function (req, res) {
   if(req.body.password == process.env.PASSWORD) {
+    delete req.body.password;
   	statusCache.push(req.body);
   	res.send('Request Recieved.');
   } else {
