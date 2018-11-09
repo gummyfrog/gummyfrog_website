@@ -1,49 +1,73 @@
 var express = require('express');
-var path = require("path");
+var path = require('path');
 var router = express.Router();
 
-app = express();
-app.use(express.static("/../public"));
 
-router.get('/', function(req, res){
-  res.render('index', {
-    title: 'Home'
-  });
-});
+class customRouter {
 
+  constructor(cache) {
+    this.express = express;
+    this.path = path;
+    this.router = router;
+    this.cache = cache;
 
-router.get('/bolopo', function(req, res){
-  res.render('bolopo', {
-    title: 'Bolopo Dragonslayer'
-  });
-});
+    this.app = this.express();
+    this.app.use(this.express.static("/../public"));
+    this.setup(this.cache);
+  }
 
+  setup(theCache) {
 
-router.get('/emojis', function(req, res){
-  res.render('emojis', {
-    title: 'Twitter Data Mining'
-  });
-});
-
-
-router.get('/resizer', function(req, res){
-  res.render('resizer', {
-    title: 'Instagram Image Formatter'
-  });
-});
-
-router.get('/map', function(req, res){
-  res.render('map', {
-    title: 'Map'
-  });
-});
+    this.router.get('/', function(req, res){
+      res.render('index', {
+        title: 'Home'
+      });
+    });
 
 
-router.get('/frogeye', function(req, res){
-  res.render('frogeye', {
-    title: 'COMING SOON'
-  });
-});
+    this.router.get('/bolopo', function(req, res){
+      res.render('bolopo', {
+        title: 'Bolopo Dragonslayer',
+      });
+    });
 
 
-module.exports = router;
+    this.router.get('/emojis', function(req, res){
+      res.render('emojis', {
+        title: 'Twitter Data Mining'
+      });
+    });
+
+
+    this.router.get('/resizer', function(req, res){
+      res.render('resizer', {
+        title: 'Instagram Image Formatter'
+      });
+    });
+
+    this.router.get('/map', function(req, res){
+      res.render('map', {
+        title: 'Map'
+      });
+    });
+
+
+    this.router.get('/frogeye', function(req, res){
+      res.render('frogeye', {
+        title: 'COMING SOON'
+      });
+    });
+
+    this.router.get('/swim', function(req, res){
+      res.render('swim', {
+        title: "Swimming Pool",
+        theCache: JSON.stringify(theCache.get())
+      });
+    });
+
+  }
+
+}
+
+
+module.exports = customRouter;

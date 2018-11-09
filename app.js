@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var stylus = require('stylus');
 
-var index = require('./routes/index');
+var Index = require('./routes/index');
+
 var users = require('./routes/users');
 
 var app = express();
@@ -14,7 +15,7 @@ var app = express();
 var statuscache = require('./src/statusCache.js')
 
 const statusCache = new statuscache();
-
+const index = new Index(statusCache);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +33,7 @@ app.use('/node_jszip', express.static(__dirname + '/node_modules/jszip/'));
 app.use('/node_sylb-haiku', express.static(__dirname + '/node_modules/sylb-haiku/'));
 
 
-app.use('/', index);
+app.use('/', index.router);
 app.use('/users', users);
 
 
@@ -41,8 +42,12 @@ app.get('/site', function (req, res) {
 })
 
 app.post('/site', async function (req, res) {
-	statusCache.push(req.body);
-	res.send('Got it...');
+  if(req.body.password == process.env.PASSWORD) {
+  	statusCache.push(req.body);
+  	res.send('Request Recieved.');
+  } else {
+    res.send('Request Denied. Check your password!')
+  }
 })
 
 // catch 404 and forward to error handler

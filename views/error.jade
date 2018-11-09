@@ -1,6 +1,12 @@
-extends layout
+doctype
+html
+	head
+		title =error.status
+		link(rel='stylesheet', href='/stylesheets/main.css')
 
-block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+	body
+		include nav.jade
+		div.content
+			h1= message
+			h2= error.status
+			pre #{error.stack}
