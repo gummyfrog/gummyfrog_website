@@ -19,7 +19,7 @@ class customRouter {
   setup(theCache) {
 
     this.router.get('/', function(req, res){
-      res.render('index', {
+      res.render('layout', {
         title: 'Home'
       });
     });
