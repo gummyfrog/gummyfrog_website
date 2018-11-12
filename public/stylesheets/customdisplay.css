@@ -1,5 +1,3 @@
-
-
 .jstree {
   margin-top: 20px;
 }
@@ -27,18 +25,6 @@
 .jstree ol:empty {
   height: 0px !important;
 
-}
-
-.tweet {
-  text-transform: none !important;
-}
-
-bracket {
-  font: 26px "Open Sans", Helvetica;
-  text-transform: lowercase;
-  padding-top: 5px;
-  display: none !important;
-  color: #30499B !important;
 }
 
 .accordion.depth1 {
@@ -86,87 +72,14 @@ bracket {
   background-color: #EE4035 !important;
 }
 
-
-bracket.depth1 {
-  color: #367ABD !important;
-}
-
-bracket.depth2 {
-  color: #4CB2D4 !important;
-}
-
-bracket.depth3 {
-  color: #9FD1F0 !important;
-}
-
-bracket.depth4 {
-  color: #69C1FF !important;
-}
-
-bracket.depth5 {
-  color: #00b842 !important;
-}
-
-bracket.depth6 {
-  color: #6AE83A !important;
-}
-
-bracket.depth7 {
-  color: #95EB00 !important;
-}
-
-bracket.depth8 {
-  color: #fff950 !important;
-}
-
-
-bracket.depth9 {
-  color: #FF9A08 !important;
-}
-
-bracket.depth10 {
-  color: #EB7B2D !important;
-}
-
-bracket.depth11 {
-  color: #EE4035 !important;
-}
-
 .empty {
   opacity: 0.2 !important;
-}
-
-.object {
-/*  padding-top: 11px;
-*/  text-align: left !important;
-  color: #30499B !important;
-}
-
-.chartContainer {
-  padding-top: 10px;
-   max-width:200px;
-   height:150px;
-   display:block !important;
-}
-
-.timeContainer {
-  padding-top: 15px;
-  max-width: 500px;
-  height: 360px;
-  display:block !important;
-}
-
-.barContainer {
-  padding-top: 10px;
-  max-width: 500px;
-  height: 300px;
-  display:block !important;
 }
 
 .accordion {
   background-color:#30499B;
   border-radius: 15px;
-  border-width: 3px;
+  border-width: 0px;
 
   cursor:pointer;
   margin-left: 20px;
@@ -197,7 +110,6 @@ bracket.depth11 {
 
   margin-top: 0px;
   margin-bottom: 0px;
-
 }
 
 .panel.transition {

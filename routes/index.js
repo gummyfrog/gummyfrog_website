@@ -16,7 +16,7 @@ class customRouter {
     this.setup(this.cache);
   }
 
-  setup(theCache) {
+  setup(currentCache) {
 
     this.router.get('/', function(req, res){
       res.render('layout', {
@@ -58,10 +58,10 @@ class customRouter {
       });
     });
 
-    this.router.get('/swim', function(req, res){
-      res.render('swim', {
-        title: "Swimming Pool",
-        theCache: JSON.stringify(theCache.get())
+    this.router.get('/status', function(req, res){
+      res.render('status', {
+        title: "Status Page",
+        currentCache: JSON.stringify(currentCache.get())
       });
     });
 

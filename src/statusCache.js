@@ -1,8 +1,21 @@
 class statusCache {
 
   constructor() {
-    this.json = {};
-    this.message = 'Hello! I am alive.'
+    this.json = {
+      "bolopo": {
+        "status":"offline"
+      },
+      "frogeye": {
+        "status":"offline"
+      },
+      "jordan": {
+        "status":"offline"
+      },
+      "emoji-overnight":{
+        "status":"offline"
+      }
+    };
+    this.message = 'Hello! I am alive.';
   };
 
   get() {

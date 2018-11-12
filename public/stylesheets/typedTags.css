@@ -1,0 +1,19 @@
+number {
+  color: #EA5D5C;
+}
+
+string {
+  color: #3c8ce4;
+}
+
+object {
+  color: #11143B;
+}
+
+true, online {
+  color: #00be70;
+}
+
+false, offline {
+  color: #fa5a5a;
+}
