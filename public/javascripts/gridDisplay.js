@@ -21,7 +21,7 @@ function embed(data, key) {
   console.log(info);
   return(`
     <div class="embed status" id="${key}">
-    <div class="titleBar">${key}</div>
+    <div class="titleBar">§<span class="titleText">${key}</span> </div>
     <div class="content">${info.join('\n')}</div>
     </div>`)
 };
