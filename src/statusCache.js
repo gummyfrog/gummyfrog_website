@@ -3,19 +3,26 @@ class statusCache {
   constructor() {
     this.json = {
       "bolopo": {
-        "status":"offline"
+        "status":"offline",
+        "last":"11:35pm",
+        "desc":"Haiku Generator",
       },
       "frogeye": {
-        "status":"offline"
+        "status":"offline",
+        "last":"11:35pm",
+        "desc":"Crystal Ball for the Ultimate Socialite.",
       },
       "jordan": {
-        "status":"offline"
+        "status":"offline",
+        "last":"11:35pm",
+        "desc":"Jordan.",
       },
-      "emoji-overnight":{
-        "status":"offline"
+      "emoji":{
+        "status":"offline",
+        "last":"11:35pm",
+        "desc":"Overnight Tracking",
       }
     };
-    this.message = 'Hello! I am alive.';
   };
 
   get() {

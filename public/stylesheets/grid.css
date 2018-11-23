@@ -1,41 +1,56 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 30px;
+  column-gap: 120px;
+  row-gap: 100px;
 }
 
-.thumb {
-  height: 16px;
-  width: 16px;
-}
 
 .titleBar {
-  color: #a25ba4;
-  width: 100%;
-  height: 30px;
-  text-align: center;
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 25px;
+	width: 100%;
+	font-family: "Helvetica Neue", sans-serif;
+	overflow: hidden;
 }
 
 .titleText {
-  color: #a25ba4;
-  font-size: 26px;
-  line-height: 2px;
-}
-.content {
-  padding: 10px;
+	float: left;
+	font-size: 27px;
+	color: black;
 }
 
+.infoText {
+	float: right;
+	font-size: 20px;
+	color: gray;
+	padding-top: 3px;
+	vertical-align: middle;
+}
+
+
+.desc {
+	width: 100%;
+	font-size: 20px;
+	color: gray;
+	font-family: "Helvetica Neue", sans-serif;
+	padding-bottom: 4px;
+}
+
+
+.line {
+	background-color: black;
+	width: 75%;
+	height: 2px;
+}
+
+/*.embedContent {
+	padding-top: 2px;
+}*/
+
 .item {
-  display: inline-block;
-  color: #a25ba4;
-  text-align: left;
-  width: 100%;
-  text-transform: capitalize;
-  line-height: 18px;
-  text-align: left;
-  font-family: 'Roboto Slab', serif;
-  font-size: 20px;
-  font-weight: 300;
+	display: inline-block;
+	color: black;
+	width: 100%;
+	text-transform: capitalize;
+	font-family: "Helvetica Neue", sans-serif;
+	font-size: 20px;
 }

@@ -64,7 +64,7 @@ ul#horizontal {
 }
 ul#horizontal li {
 	display: inline;
-  padding: 8px;
+  padding-left: 10px;
 }
 
 
