@@ -4,23 +4,28 @@ class statusCache {
     this.json = {
       "bolopo": {
         "status":"offline",
-        "last":"11:35pm",
+        "last":"｢(ﾟﾍﾟ)",
         "desc":"Haiku Generator",
       },
       "frogeye": {
         "status":"offline",
-        "last":"11:35pm",
+        "last":"σ(´し_｀〃)ゞ",
         "desc":"Crystal Ball for the Ultimate Socialite.",
       },
       "jordan": {
         "status":"offline",
-        "last":"11:35pm",
+        "last":"( ?´_ゝ｀)",
         "desc":"Jordan.",
       },
       "emoji":{
         "status":"offline",
-        "last":"11:35pm",
+        "last":"ヽ(。ヘ°)ノ",
         "desc":"Overnight Tracking",
+      },
+      "cuckwatch":{
+        "status":"offline",
+        "last":"(^～^;)ゞ",
+        "desc":"Cuck Retweeter.",
       }
     };
   };
