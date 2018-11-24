@@ -12,15 +12,15 @@ class statusCache {
         "last":"(^～^;)ゞ",
         "desc":"Cuck Retweeter.",
       },
-      "frogeye": {
-        "status":"offline",
-        "last":"σ(´し_｀〃)ゞ",
-        "desc":"Crystal Ball for the Ultimate Socialite.",
-      },
       "jordan": {
         "status":"offline",
         "last":"( ?´_ゝ｀)",
         "desc":"Jordan.",
+      },
+      "frogeye": {
+        "status":"offline",
+        "last":"σ(´し_｀〃)ゞ",
+        "desc":"Crystal Ball for the Ultimate Socialite.",
       },
       "emoji":{
         "status":"offline",
