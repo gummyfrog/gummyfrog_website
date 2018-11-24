@@ -7,6 +7,11 @@ class statusCache {
         "last":"｢(ﾟﾍﾟ)",
         "desc":"Haiku Generator",
       },
+      "cuckwatch":{
+        "status":"offline",
+        "last":"(^～^;)ゞ",
+        "desc":"Cuck Retweeter.",
+      },
       "frogeye": {
         "status":"offline",
         "last":"σ(´し_｀〃)ゞ",
@@ -21,11 +26,6 @@ class statusCache {
         "status":"offline",
         "last":"ヽ(。ヘ°)ノ",
         "desc":"Overnight Tracking",
-      },
-      "cuckwatch":{
-        "status":"offline",
-        "last":"(^～^;)ゞ",
-        "desc":"Cuck Retweeter.",
       }
     };
   };

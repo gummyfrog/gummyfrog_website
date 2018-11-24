@@ -5,7 +5,6 @@
   row-gap: 100px;
 }
 
-
 .titleBar {
 	width: 100%;
 	font-family: "Helvetica Neue", sans-serif;
@@ -20,31 +19,26 @@
 
 .infoText {
 	float: right;
-	font-size: 20px;
+	font-size: 19px;
 	color: gray;
 	padding-top: 3px;
 	vertical-align: middle;
 }
 
-
 .desc {
 	width: 100%;
-	font-size: 20px;
+	font-size: 19px;
 	color: gray;
 	font-family: "Helvetica Neue", sans-serif;
-	padding-bottom: 4px;
+	padding-bottom: 5px;
+	margin-top: -4px;
 }
-
 
 .line {
 	background-color: black;
 	width: 75%;
 	height: 2px;
 }
-
-/*.embedContent {
-	padding-top: 2px;
-}*/
 
 .item {
 	display: inline-block;
