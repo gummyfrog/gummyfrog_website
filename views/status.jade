@@ -41,6 +41,6 @@ html
       cache = cache.replace(/(&quot;)+/g, '"');
       cache = JSON.parse(cache);
       jsonDisplay(document.getElementById('jstree'), cache);
-      setInterval(getCache, 5000);
+      setInterval(getCache, 5 * 1000);
 
 
