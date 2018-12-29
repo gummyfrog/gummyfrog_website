@@ -9,14 +9,13 @@ class customRouter {
     this.express = express;
     this.path = path;
     this.router = router;
-    this.cache = cache;
 
     this.app = this.express();
     this.app.use(this.express.static("/../public"));
-    this.setup(this.cache);
+    this.setup();
   }
 
-  setup(currentCache) {
+  setup() {
 
     this.router.get('/', function(req, res){
       res.render('layout', {
@@ -55,13 +54,6 @@ class customRouter {
     this.router.get('/frogeye', function(req, res){
       res.render('frogeye', {
         title: 'COMING SOON'
-      });
-    });
-
-    this.router.get('/status', function(req, res){
-      res.render('status', {
-        title: "Status Page",
-        currentCache: JSON.stringify(currentCache.get())
       });
     });
 
