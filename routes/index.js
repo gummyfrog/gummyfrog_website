@@ -57,7 +57,7 @@ class customRouter {
       });
     });
 
-    this.router.get('/testlink2020', function(req, res){
+    this.router.get('/e2020', function(req, res){
       res.render('sandwich2020', {
         title: 'SANDWICH 2020'
       });
