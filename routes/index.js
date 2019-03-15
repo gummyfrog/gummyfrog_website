@@ -63,6 +63,19 @@ class customRouter {
       });
     });
 
+    this.router.get('/cw_faq', function(req, res){
+      res.render('cw_faq', {
+        title: 'Cuck Watch FAQ'
+      });
+    });
+
+    this.router.get('/cw_faq_br', function(req, res){
+      res.render('cw_faq_br', {
+        title: 'Corno Patrulha FAQ'
+      });
+    });
+
+
   }
 
 }
