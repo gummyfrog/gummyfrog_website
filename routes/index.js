@@ -75,6 +75,11 @@ class customRouter {
       });
     });
 
+    this.router.get('/mail', function(req, res){
+      res.render('mail', {
+        title: 'mail'
+      });
+    });
 
   }
 
