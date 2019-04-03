@@ -19,7 +19,8 @@ class customRouter {
 
     this.router.get('/', function(req, res){
       res.render('layout', {
-        title: 'Home'
+        title: 'Home',
+        description: 'gmfr homepage'
       });
     });
 
@@ -27,57 +28,66 @@ class customRouter {
     this.router.get('/bolopo', function(req, res){
       res.render('bolopo', {
         title: 'Bolopo Dragonslayer',
+        description: 'page about making haikus programatically'
       });
     });
 
 
     this.router.get('/emojis', function(req, res){
       res.render('emojis', {
-        title: 'Twitter Data Mining'
+        title: 'Twitter Data Mining',
+        description: 'associating emojis with words based on data collected from twitter'
       });
     });
 
 
     this.router.get('/resizer', function(req, res){
       res.render('resizer', {
-        title: 'Instagram Image Formatter'
+        title: 'Instagram Image Formatter',
+        description: 'aspect-ratio fit images into a square'
       });
     });
 
     this.router.get('/map', function(req, res){
       res.render('map', {
-        title: 'Map'
+        title: 'Map',
+        description: 'what is this page'
       });
     });
 
 
     this.router.get('/frogeye', function(req, res){
       res.render('frogeye', {
-        title: 'COMING SOON'
+        title: 'COMING SOON',
+        description: 'coming soon'
       });
     });
 
     this.router.get('/VOTE_SANDWICH_2020', function(req, res){
       res.render('sandwich2020', {
-        title: 'SANDWICH 2020'
+        title: 'SANDWICH 2020',
+        description: 'SANDWICH 2020'
       });
     });
 
     this.router.get('/cw_faq', function(req, res){
       res.render('cw_faq', {
-        title: 'Cuck Watch FAQ'
+        title: 'Cuck Watch FAQ',
+        description: 'faq for Cuck Watch'
       });
     });
 
     this.router.get('/cw_faq_br', function(req, res){
       res.render('cw_faq_br', {
-        title: 'Corno Patrulha FAQ'
+        title: 'Corno Patrulha FAQ',
+        description: 'faq for Corno Patrol'
       });
     });
 
     this.router.get('/mail', function(req, res){
       res.render('mail', {
-        title: 'mail'
+        title: 'mail',
+        description: 'mail thing'
       });
     });
 
