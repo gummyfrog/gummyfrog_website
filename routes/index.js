@@ -84,6 +84,27 @@ class customRouter {
       });
     });
 
+    this.router.get('/auditype', function(req, res){
+      res.render('auditype', {
+        title: 'Auditype',
+        description: ' '
+      });
+    });
+
+    this.router.get('/privacy', function(req, res){
+      res.render('privacy', {
+        title: 'Privacy Policy',
+        description: ' '
+      });
+    });
+
+      this.router.get('/contact', function(req, res){
+      res.render('contact', {
+        title: 'Contact',
+        description: ' '
+      });
+    });
+
     this.router.get('/mail', function(req, res){
       res.render('mail', {
         title: 'mail',

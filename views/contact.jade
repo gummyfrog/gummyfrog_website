@@ -1,0 +1,23 @@
+doctype
+html
+	head
+		include richembed.jade
+		title= title
+		link(rel='stylesheet', href='/stylesheets/auditype.css')
+
+	body
+		div.header
+			div.content
+				img.logo(src="images/auditype.png")
+				p.title Auditype.
+				p.subtitle Type the way you like. Quiet, loud, or anywhere in between.
+				br
+
+				p.title Contact
+				p For questions and business inquiries, please contact us at #[a.email(href="mailto:auditypeinquiries@gmail.com") auditypeinquiries@gmail.com].
+
+				br
+
+				a(href="/auditype") About Auditype
+				br
+				a(href="/privacy") Privacy Policy
