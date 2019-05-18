@@ -39,6 +39,15 @@ a {
   height:150px;
 }
 
+.preview1 {
+  float: left;
+  height: 300px;
+}
+
+.preview2 {
+  float: right;
+
+}
 
 .title {
   font-size: 40px;
