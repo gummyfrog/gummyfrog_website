@@ -112,6 +112,13 @@ class customRouter {
       });
     });
 
+    this.router.get('/cartesian', function(req, res){
+      res.render('cartesian', {
+        title: 'cartesian',
+        description: ' '
+      });
+    });
+
   }
 
 }
