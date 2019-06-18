@@ -77,9 +77,28 @@ a {
 .input-container {
   display: flex;
   width: 100%;
-  margin-bottom: 10px;
   overflow: hidden;
+  margin-bottom: 10px;
 }
+
+.input-container.label {
+  margin-bottom: 0px;
+  height: 20px;
+}
+
+.input-container h2 {
+  line-height: 0px;
+  font-size: 18px;
+  bottom: 10px;
+
+  position: relative;
+  flex-grow: 2;
+  flex-shrink: 1;
+  min-width: 10px;
+  padding: 5px;
+  outline: none;
+}
+
 
 .icon {
   padding: 10px;
@@ -89,27 +108,27 @@ a {
   text-align: center;
 }
 
+.icon.label {
+  opacity: 0.5;
+}
+
 .input-field {
-  width: 100%;
+  position: relative;
+  flex-grow: 2;
+  flex-shrink: 1;
+  min-width: 10px;
   padding: 5px;
   outline: none;
+}
+
+.input-field.small {
+  font-size: 15px;
 }
 
 .input-field:focus {
   border: 2px solid dodgerblue;
 }
 
-.qinput-field {
-  width: 22.6%;
-  padding: 5px;
-  outline: none;
-}
-
-.trinput-field {
-  width: 30.2%;
-  padding: 5px;
-  outline: none;
-}
 
 .btn {
   background-color: dodgerblue;

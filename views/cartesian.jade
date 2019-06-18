@@ -15,21 +15,44 @@ html
 				// img.logo(src="images/auditype_final.png")
 				form()#form
 					h2 Configuration
+					.input-container.label
+						i.icon.label
+						h2.input-field Full Pages
+						h2.input-field Five Columns
+						h2.input-field Four Columns
+						h2.input-field Three Columns
 					.input-container
-						i.fas.fa-grip-lines.icon
-						input.qinput-field(type='number', min="0", max="5", placeholder='Full Pages')#full
-						input.qinput-field(type='number', min="0", max="5", placeholder='Five Columns')#five
-						input.qinput-field(type='number', min="0", max="5", placeholder='Four Columns')#four
-						input.qinput-field(type='number', min="0", max="5", placeholder='Three Columns')#three
+						i.fab.fa-leanpub.icon
+						input.input-field(type='number', min="0", max="5", placeholder='Full Pages')#full
+						input.input-field(type='number', min="0", max="5", placeholder='Five Columns')#five
+						input.input-field(type='number', min="0", max="5", placeholder='Four Columns')#four
+						input.input-field(type='number', min="0", max="5", placeholder='Three Columns')#three
+
+
+					.input-container.label
+						i.icon.label
+						h2.input-field Two ½ Wide
+						h2.input-field Two ½ Square
+						h2.input-field Two Columns
+					.input-container
+						i.fas.fa-columns.icon
+						input.input-field(type='number', min="0", max="5", placeholder='Two ½ Wide')#twohw
+						input.input-field(type='number', min="0", max="5", placeholder='Two ½ Square')#twohs
+						input.input-field(type='number', min="0", max="5", placeholder='Two Columns')#two
+
+
+					.input-container.label
+						i.icon.label
+						h2.input-field Lower Bound
+						h2.input-field Upper Bound
+
+					.input-container.label
+						i.icon.label
+						h2.input-field.small (everything above)
+						h2.input-field.small (everything below)
 
 					.input-container
-						i.fas.fa-grip-lines-vertical.icon
-						input.trinput-field(type='number', min="0", max="5", placeholder='Two ½ Wide')#twohw
-						input.trinput-field(type='number', min="0", max="5", placeholder='Two ½ Square')#twohs
-						input.trinput-field(type='number', min="0", max="5", placeholder='Two Columns')#two
-
-					.input-container
-						i.fas.fa-sort-amount-up.icon
+						i.fas.fa-coins.icon
 						input.input-field(type='number', min="0", max="10000", placeholder='Lower Bound')#lower
 						input.input-field(type='number', min="0", max="10000", placeholder='Upper Bound')#upper
 
