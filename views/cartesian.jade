@@ -14,7 +14,7 @@ html
 			div.content
 				// img.logo(src="images/auditype_final.png")
 				form()#form
-					h2 Configuration
+					h2 What ad spots have you not sold yet?
 					.input-container.label
 						i.icon.label
 						h2.input-field Full Pages
@@ -43,22 +43,16 @@ html
 
 					.input-container.label
 						i.icon.label
-						h2.input-field Lower Bound
-						h2.input-field Upper Bound
-
-					.input-container.label
-						i.icon.label
-						h2.input-field.small (everything above)
-						h2.input-field.small (everything below)
+						h2.input-field Break Even Cost
 
 					.input-container
 						i.fas.fa-coins.icon
-						input.input-field(type='number', min="0", max="10000", placeholder='Lower Bound')#lower
-						input.input-field(type='number', min="0", max="10000", placeholder='Upper Bound')#upper
+						input.input-field(type='number', min="0", max="1000000", placeholder='Break Even Cost')#lower
 
 					button.btn(type='button')#calculate Calculate
 
 				script(src='javascripts/cartesian.js')
 				div.tableDiv
+					h3 You can break even by selling at any rate combination from this table:
 					table.cartesianTable#jsonDisplay
 

@@ -11,6 +11,13 @@ h2 {
   line-height: 30px;
 }
 
+h3 {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
 
 a {
   font-family: "Helvetica Neue", sans-serif;
@@ -121,7 +128,7 @@ a {
   outline: none;
 }
 
-.input-field.small {
+.small {
   font-size: 15px;
 }
 

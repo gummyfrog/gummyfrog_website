@@ -41,15 +41,14 @@ function break_even(available, profit, goal, upper_bound) {
 		var sum = a.reduce((total, num)=>total + num);
 		return {combo: a, sum: sum}
 	})
-	.filter(a => a.sum >= goal-profit && a.sum <= upper_bound)
+	.filter(a => a.sum >= goal-profit) // upper bound would be here
 	.sort((a, b) => b.sum-a.sum);
 	
 	console.log(available);
 	console.log(x);
-	console.log(available);
 
 	if(x.length != 0) {
-		snack(`${x.length} results, the highest being ${x[0].sum} and the lowest being ${x[x.length-1].sum}.`)
+		snack(`${x.length} results, the highest profit being $${x[0].sum} and the lowest being $${x[x.length-1].sum}.`)
 	}
 
 	return(x);
@@ -58,10 +57,11 @@ function break_even(available, profit, goal, upper_bound) {
 document.getElementById("calculate").addEventListener("click", function(){
 	var form = document.getElementById('form');
 	var available = [];
-	var upper = form[form.length-2].value
-	var lower = form[form.length-3].value
+	var lower = form[form.length-2].value
 
-	for(var q=0;q<form.length-3;q++) {
+	console.log(lower);
+
+	for(var q=0;q<form.length-2;q++) {
 		if(form[q].value > 5) {
 			break;
 		}
@@ -70,7 +70,7 @@ document.getElementById("calculate").addEventListener("click", function(){
 			available.push(form[q].id);
 		}
 	}
-	var data = break_even(available, 0, lower, upper);
+	var data = break_even(available, 0, lower);
 
 	jsonDisplay(document.getElementById('jsonDisplay'), data, available)
 });
@@ -80,6 +80,6 @@ function snack(message) {
   var x = document.getElementById("snackbar");
   x.innerHTML = message;
   x.className = "show";
-  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 6000);
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
 } 
 
