@@ -30,6 +30,7 @@ a {
 .tableDiv {
   overflow-x: auto;
 }
+
 .tableheader {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 25px;
@@ -37,10 +38,10 @@ a {
   line-height: 0px;
 }
 
-
 .cartesianTable {
+  position: relative;
+  margin-left: -14px;
   border-spacing: 14px 0;
-  margin-top: 35px;
   text-align: left;
 }
 
@@ -55,15 +56,46 @@ a {
   color: white;
 }
 
-.cartesianTable td:nth-child(1) {
-  opacity: 0.5
+.cartesianTable tr:hover .v0 {
+  opacity: 1;
 }
+.cartesianTable tr:hover .v1 {
+  opacity: 1;
+}
+.cartesianTable tr:hover .v2 {
+  opacity: 1;
+}
+
+.cartesianTable tr:hover :nth-child(1){
+  opacity: 1;
+}
+
+.cartesianTable td:nth-child(1) {
+  opacity: 0.7
+}
+
+.v0 {
+  opacity: 1;
+}
+
+.v1 {
+  opacity: 0.5;
+}
+
+.v2 {
+  opacity: 0.2;
+}
+
 
 .content {
   padding: 50px;
   width: 70%;
   margin: auto;
   overflow: hidden;
+}
+
+.info {
+  text-align: center;
 }
 
 .header {
@@ -145,6 +177,8 @@ a {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .btn:hover {

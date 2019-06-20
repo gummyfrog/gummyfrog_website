@@ -1,8 +1,4 @@
-var single_rates = [1600, 800, 800, 700, 450, 650, 500];
-var fourm_rates = [1450, 700, 700, 600, 375, 575, 450];
-var twelm_rates = [1300, 600, 600, 500, 275, 475, 400];
-
-var valuations = {
+var values = {
 	full: { vals: [1600, 1450, 1300], name: "Full Page"},
 	five: { vals: [800, 700, 600], name: "Five Columns"},
 	four: { vals: [800, 700, 600], name: "Four Columns"},
@@ -30,7 +26,7 @@ function cartesian(array) {
 	return results;
 }
 
-function break_even(available, profit, goal, upper_bound) {
+function break_even(available, profit, goal, valuations) {
 	var permutable = [];
 	for(var i=0;i<available.length;i++) {
 		permutable.push(valuations[available[i]].vals);
@@ -70,9 +66,9 @@ document.getElementById("calculate").addEventListener("click", function(){
 			available.push(form[q].id);
 		}
 	}
-	var data = break_even(available, 0, lower);
+	var data = break_even(available, 0, lower, values);
 
-	jsonDisplay(document.getElementById('jsonDisplay'), data, available)
+	display(document.getElementById('jsonDisplay'), data, available, values)
 });
 
 

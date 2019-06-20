@@ -1,4 +1,4 @@
-function createTable(table, data, available) {
+function createTable(table, data, available, valuations) {
   var header = table.insertRow(0);
   var headerData = `<td><h2 class="tableheader"> profit </h2></td>`;
 
@@ -13,7 +13,9 @@ function createTable(table, data, available) {
     var rowData = `<td>$${f(data[r].sum)}</td>`
 
     for(var c=0;c<data[r].combo.length;c++) {
-      rowData += `<td>$${f(data[r].combo[c])}</td>`;
+      var value = (valuations[available[c]].vals.indexOf(data[r].combo[c]));
+
+      rowData += `<td class= "v${value}">$${f(data[r].combo[c])}</td>`;
     }
 
     row.innerHTML = rowData;
@@ -46,9 +48,9 @@ function createTable(table, data, available) {
 
 
 
-function jsonDisplay(container, data, available) {
+function display(container, data, available, values) {
   container.innerHTML = "";
-  createTable(container, data, available)
+  createTable(container, data, available, values)
 }
 
 
