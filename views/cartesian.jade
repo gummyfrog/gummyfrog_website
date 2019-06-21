@@ -4,9 +4,8 @@ html
 		include richembed.jade
 		title= title
 		link(rel='stylesheet', href='/stylesheets/cartesian.css')
-		script(src='https://kit.fontawesome.com/a9b1673cea.js')
-		script(src='javascripts/palette.js')
-		script(src='javascripts/cartesianDisplayer.js')
+		link(rel='stylesheet', href='/stylesheets/js-snackbar.min.css')
+		script(src='javascripts/js-snackbar.js')
 
 	body
 		div.header
@@ -51,9 +50,15 @@ html
 
 					button.btn(type='button')#calculate Calculate
 
-				script(src='javascripts/cartesian.js')
+				div.info
+						h3#resultsInfo 
+						h3 You can break even by selling at any rate combination from this table:
 				div.tableDiv
-					div.info
-						h3#breakeven You can break even by selling at any rate combination from this table:
 					table.cartesianTable#jsonDisplay
+
+	footer
+		script(src='javascripts/cartesian.js')
+		script(src='https://kit.fontawesome.com/a9b1673cea.js')
+		script(src='javascripts/palette.js')
+		script(src='javascripts/cartesianDisplayer.js')
 
