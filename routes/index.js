@@ -63,11 +63,8 @@ class customRouter {
       });
     });
 
-    this.router.get('/WOWGLD', function(req, res){
-      res.render('wowcoin', {
-        title: 'WOWGLD',
-        description: 'WOWGLD'
-      });
+    this.router.get('/WOWGOLD', function(req, res){
+      res.render('wowcoin');
     });
 
     this.router.get('/cw_faq', function(req, res){
