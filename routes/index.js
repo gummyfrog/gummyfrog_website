@@ -63,10 +63,10 @@ class customRouter {
       });
     });
 
-    this.router.get('/VOTE_SANDWICH_2020', function(req, res){
-      res.render('sandwich2020', {
-        title: 'SANDWICH 2020',
-        description: 'SANDWICH 2020'
+    this.router.get('/WOWGLD', function(req, res){
+      res.render('wowcoin', {
+        title: 'WOWGLD',
+        description: 'WOWGLD'
       });
     });
 
@@ -118,6 +118,15 @@ class customRouter {
         description: ' '
       });
     });
+
+
+    this.router.get('/blank', function(req, res){
+      res.render('blank', {
+        title: 'cartesian',
+        description: ' '
+      });
+    });
+
 
   }
 
