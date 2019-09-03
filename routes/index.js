@@ -63,7 +63,7 @@ class customRouter {
       });
     });
 
-    this.router.get('/WOWGOLD', function(req, res){
+    this.router.get('/kalimdorheritage', function(req, res){
       res.render('wowcoin');
     });
 
