@@ -61,15 +61,20 @@ p {
 }
 
 ul#horizontal {
+  width: 100%;
 	list-style: none;
+  overflow: hidden;
 }
 ul#horizontal li {
 	display: inline;
+}
+ul#horizontal li:not(:first-child) {
   padding-left: 10px;
 }
 
 
 .content {
+  position: relative;
   padding: 50px;
   width: 80%;
   margin: auto;

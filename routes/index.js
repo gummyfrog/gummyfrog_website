@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var router = express.Router();
 
-
 class customRouter {
 
   constructor(cache) {
@@ -124,6 +123,12 @@ class customRouter {
       });
     });
 
+    this.router.get('/smashdata', function(req, res){
+      res.render('smashdata', {
+        title: 'Smashing!',
+        description: ' '
+      });
+    });
 
   }
 

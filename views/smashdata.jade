@@ -1,0 +1,18 @@
+doctype
+html
+  head
+    include richembed.jade
+    title= title
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='/stylesheets/smash_data.css')
+    
+  body
+    include nav.jade
+    div.content
+      div#buttonContainer
+      div.smashtree
+        h1.subgum Smashing!
+        
+  footer
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js")
+    script(src='/javascripts/smashDisplayer.js')
