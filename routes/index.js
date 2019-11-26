@@ -2,125 +2,104 @@ var express = require('express');
 var path = require('path');
 var router = express.Router();
 
-
 class customRouter {
 
-  constructor(cache) {
-    this.express = express;
-    this.path = path;
-    this.router = router;
+	constructor(cache) {
+		this.express = express;
+		this.path = path;
+		this.router = router;
 
-    this.app = this.express();
-    this.app.use(this.express.static("/../public"));
-    this.setup();
-  }
+		this.app = this.express();
+		this.app.use(this.express.static("/../public"));
+		this.setup();
+	}
 
-  setup() {
+	setup() {
 
-    this.router.get('/', function(req, res){
-      res.render('layout', {
-        title: 'Home',
-        description: 'gmfr homepage'
-      });
-    });
+		this.router.get('/', function(req, res){
+			res.render('home', {
+				title: 'Home',
+				description: 'gmfr homepage'
+			});
+		});
 
+		this.router.get('/bolopo', function(req, res){
+			res.render('bolopo', {
+				title: 'Bolopo Dragonslayer',
+				description: 'page about making haikus programatically'
+			});
+		});
 
-    this.router.get('/bolopo', function(req, res){
-      res.render('bolopo', {
-        title: 'Bolopo Dragonslayer',
-        description: 'page about making haikus programatically'
-      });
-    });
+		this.router.get('/emojis', function(req, res){
+			res.render('emojis', {
+				title: 'Twitter Data Mining',
+				description: 'associating emojis with words based on data collected from twitter'
+			});
+		});
 
+		this.router.get('/resizer', function(req, res){
+			res.render('resizer', {
+				title: 'Instagram Image Formatter',
+				description: 'aspect-ratio fit images into a square'
+			});
+		});
 
-    this.router.get('/emojis', function(req, res){
-      res.render('emojis', {
-        title: 'Twitter Data Mining',
-        description: 'associating emojis with words based on data collected from twitter'
-      });
-    });
+		this.router.get('/map', function(req, res){
+			res.render('map', {
+				title: 'Map',
+				description: 'what is this page'
+			});
+		});
 
+		this.router.get('/cw_faq', function(req, res){
+			res.render('cw_faq', {
+				title: 'Cuck Watch FAQ',
+				description: 'faq for Cuck Watch'
+			});
+		});
 
-    this.router.get('/resizer', function(req, res){
-      res.render('resizer', {
-        title: 'Instagram Image Formatter',
-        description: 'aspect-ratio fit images into a square'
-      });
-    });
+		this.router.get('/cw_faq_br', function(req, res){
+			res.render('cw_faq_br', {
+				title: 'Corno Patrulha FAQ',
+				description: 'faq for Corno Patrol'
+			});
+		});
 
-    this.router.get('/map', function(req, res){
-      res.render('map', {
-        title: 'Map',
-        description: 'what is this page'
-      });
-    });
+		this.router.get('/auditype', function(req, res){
+			res.render('auditype', {
+				title: 'Auditype',
+				description: ' '
+			});
+		});
 
+		this.router.get('/privacy', function(req, res){
+			res.render('privacy', {
+				title: 'Privacy Policy',
+				description: ' '
+			});
+		});
 
-    this.router.get('/frogeye', function(req, res){
-      res.render('frogeye', {
-        title: 'COMING SOON',
-        description: 'coming soon'
-      });
-    });
+		this.router.get('/contact', function(req, res){
+			res.render('contact', {
+				title: 'Contact',
+				description: ' '
+			});
+		});
 
-    this.router.get('/VOTE_SANDWICH_2020', function(req, res){
-      res.render('sandwich2020', {
-        title: 'SANDWICH 2020',
-        description: 'SANDWICH 2020'
-      });
-    });
+		this.router.get('/mail', function(req, res){
+			res.render('mail', {
+				title: 'mail',
+				description: 'mail thing'
+			});
+		});
 
-    this.router.get('/cw_faq', function(req, res){
-      res.render('cw_faq', {
-        title: 'Cuck Watch FAQ',
-        description: 'faq for Cuck Watch'
-      });
-    });
-
-    this.router.get('/cw_faq_br', function(req, res){
-      res.render('cw_faq_br', {
-        title: 'Corno Patrulha FAQ',
-        description: 'faq for Corno Patrol'
-      });
-    });
-
-    this.router.get('/auditype', function(req, res){
-      res.render('auditype', {
-        title: 'Auditype',
-        description: ' '
-      });
-    });
-
-    this.router.get('/privacy', function(req, res){
-      res.render('privacy', {
-        title: 'Privacy Policy',
-        description: ' '
-      });
-    });
-
-      this.router.get('/contact', function(req, res){
-      res.render('contact', {
-        title: 'Contact',
-        description: ' '
-      });
-    });
-
-    this.router.get('/mail', function(req, res){
-      res.render('mail', {
-        title: 'mail',
-        description: 'mail thing'
-      });
-    });
-
-    this.router.get('/cartesian', function(req, res){
-      res.render('cartesian', {
-        title: 'cartesian',
-        description: ' '
-      });
-    });
-
-  }
-
+		this.router.get('/cartesian', function(req, res){
+			res.render('cartesian', {
+				title: 'cartesian',
+				description: ' '
+			});
+		});
+	}
 }
 
 

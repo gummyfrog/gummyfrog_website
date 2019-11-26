@@ -1,0 +1,21 @@
+doctype
+html
+  head
+    include richembed.pug
+    title= title
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    
+  body
+    include nav.pug
+    div.content
+      p(style="white-space:pre-line;").
+        Hi, I'm Neil. This is a website containing my work. It's always under construction.
+
+        My interests range from large scale data analysis to game development, system dynamics, source mapping, digital art, procedural generation, haikus, chat bots, and anything in between.
+
+
+
+        If you're interested, this website is powered by #[a(href="/https://github.com/expressjs/express") Express], #[a(href="https://github.com/pugjs/pug") Pug] and #[a(href="https://nodejs.org/en/") Node.js] 
+
+        To get in contact, my email is #[a(href="mailto:neilsemail@me.com") neilsemail@me.com]. How'd you even find me, anyway?
+

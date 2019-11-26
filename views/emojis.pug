@@ -1,7 +1,7 @@
 doctype
 html
   head
-    include richembed.jade
+    include richembed.pug
     script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
     title= title
@@ -9,7 +9,7 @@ html
     link(rel='stylesheet', href='/stylesheets/emojis.css')
     
   body
-    include nav.jade
+    include nav.pug
     div.content
       div.contentright
       

@@ -1,12 +1,12 @@
 doctype
 html
 	head
-		include richembed.jade
+		include richembed.pug
 		title =error.status
 		link(rel='stylesheet', href='/stylesheets/main.css')
 
 	body
-		include nav.jade
+		include nav.pug
 		div.content
 			h1= message
 			h2= error.status
