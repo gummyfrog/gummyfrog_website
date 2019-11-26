@@ -1,0 +1,147 @@
+.smashtree {
+  margin-top: 20px;
+}
+
+.smashtree li {
+  list-style-type: none;
+  color: #1d1a31;
+}
+
+.smashtree li {
+  font: 25px "Open Sans", Helvetica;
+  font-weight: 350;
+  text-transform: lowercase;
+  padding-top: 10px;
+}
+
+.smashtree ol {
+  list-style-type: none;
+}
+
+.smashtree li:has(>ol:empty) {
+  opacity: 0.2;
+}
+
+.smashtree ol:empty {
+  height: 0px !important;
+
+}
+
+.smashurl {
+  margin: 0 auto;
+  height: 30px;
+  width: 100%;
+  font-size: 30px;
+}
+
+.smashgo {
+  display: block;
+  background-color:#30499B;
+  border-radius: 15px;
+  border-width: 0px;
+  margin-bottom: 10px;
+
+  cursor:pointer;
+
+  height: 30px;
+  width: 100%;
+
+  font-size: 10px;
+  text-align: center;
+
+  color: white;
+  opacity: 0.8;
+  transition: opacity 1s ease;
+}
+
+
+.accordion.depth1 {
+  background-color: #367ABD !important;
+}
+
+.accordion.depth2 {
+  background-color: #4CB2D4 !important;
+}
+
+.accordion.depth3 {
+  background-color: #9FD1F0 !important;
+}
+
+.accordion.depth4 {
+  background-color: #69C1FF !important;
+}
+
+.accordion.depth5 {
+  background-color: #00b842 !important;
+}
+
+.accordion.depth6 {
+  background-color: #6AE83A !important;
+}
+
+.accordion.depth7 {
+  background-color: #95EB00 !important;
+}
+
+.accordion.depth8 {
+  background-color: #fff950 !important;
+}
+
+
+.accordion.depth9 {
+  background-color: #FF9A08 !important;
+}
+
+.accordion.depth10 {
+  background-color: #EB7B2D !important;
+  
+}
+
+.accordion.depth11 {
+  background-color: #EE4035 !important;
+}
+
+.empty {
+  opacity: 0.2 !important;
+}
+
+.accordion {
+  background-color:#30499B;
+  border-radius: 15px;
+  border-width: 0px;
+
+  cursor:pointer;
+  margin-left: 20px;
+  margin-top: 5px;
+
+  height: 20px;
+  width: 100px;
+
+  font-size: 17px;
+  text-align: left;
+  line-height: 10px;
+
+  opacity: 0.8;
+  transition: opacity 1s ease;
+}
+
+.accordion.active {
+  color: white;
+  opacity: 1;
+  text-align: right;
+}
+
+.panel {
+  height: 36px;
+  opacity: 0.3;
+  transition: opacity 1s ease;
+  overflow: hidden;
+
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.panel.transition {
+  opacity: 1;
+  height: auto;
+}

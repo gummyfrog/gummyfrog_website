@@ -99,7 +99,17 @@ class customRouter {
 				description: ' '
 			});
 		});
+
+    this.router.get('/smashdata', function(req, res){
+      res.render('smashdata', {
+        title: 'Smashing!',
+        description: ' '
+      });
+    });
+
+
 	}
+
 }
 
 
