@@ -1,65 +1,80 @@
+:root {
+    --background-color: #fff;
+    --background-off: #e8e8e8;
+
+    --nav-background-color: #fff;
+    --nav-text-color: #282a36;
+
+    --header-background-color: #fff;
+    --header-text-color: #282a36;
+
+    --farms-dark: #5F369B;
+    --farms-light: #7F5EAF;
+
+    --text-color: #212529;
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --background-off: #272727;
+
+    --nav-background-color: #121212;
+    --nav-text-color: #fff;
+
+    --header-background-color: #121212;
+    --header-text-color: #f8f8f2;
+
+    --text-color: #fff;
+}
+
 body {
   padding: 0;
   margin: 0;
-  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #0b0c0f;
+  font-family: "Open Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  overflow-x: hidden;
+}
+
+ol,
+ul,
+dl {
+  margin: 0;
 }
 
 a {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 30px;
-  color: #fffaf0;
   transition: 0.2s ease;
 }
 
-
-a:hover {
-  font-size: 32px;
-}
-
-a.external:hover {
-  font-size: 32px;
-}
 
 p {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 30px;
   font-weight: 400;
   line-height: 30px;
-  color: #fffaf0;
 }
 
-.bg {
+.header {
   width: 100%;
-  background: #16171e;
-  padding: 0;
-  -webkit-animation:200s scroll infinite linear;
-  -moz-animation:200s scroll infinite linear;
-  -o-animation:200s scroll infinite linear;
-  -ms-animation:200s scroll infinite linear;
-  animation:200s scroll infinite linear;
-}
-
-.gumhead {
   padding: 30px;
 }
 
-.gum {
+.headerTitle {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 60px;
   line-height: 0px;
   font-weight: 400;
-  color: #fffaf0
 }
 
-.subgum {
+.subtitle {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 21px;
   line-height: 0px;
   font-weight: 300;
-  color: #fffaf0;
 }
-
 
 .table {
   /* height: 70px; */

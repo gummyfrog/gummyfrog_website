@@ -6,6 +6,7 @@ var fs = require('fs');
 
 var Index = require('./routes/index');
 var app = express();
+
 const index = new Index();
 
 // view engine setup
