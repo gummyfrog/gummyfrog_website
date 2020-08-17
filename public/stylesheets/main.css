@@ -31,10 +31,12 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Open Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 300;
   color: var(--text-color);
   background-color: var(--background-color);
   overflow-x: hidden;
+  transition: 1s ease;
 }
 
 ol,
@@ -44,18 +46,10 @@ dl {
 }
 
 a {
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 30px;
+  color: var(--farms-dark);
   transition: 0.2s ease;
 }
 
-
-p {
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 30px;
-}
 
 .header {
   width: 100%;
@@ -71,7 +65,7 @@ p {
 
 .subtitle {
   font-family: "Helvetica Neue", sans-serif;
-  font-size: 21px;
+  font-size: 20px;
   line-height: 0px;
   font-weight: 300;
 }

@@ -1,0 +1,109 @@
+:root {
+    --background-color: #fff;
+    --background-off: #e8e8e8;
+
+    --gmfr-dark: #149684;
+    --gmfr-light: #214785;
+
+    --text-color: #212529;
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --background-off: #272727;
+
+    --text-color: #fff;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--text-color);
+  text-align: left;
+  background-color: var(--background-color);
+  overflow-x: hidden;
+}
+
+.d-flex {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ol,
+ul,
+dl {
+  margin: 0;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+
+div#padding {
+  height: 700px;
+  padding: 20px;
+  padding-top: 0;
+}
+
+.header {
+  background-color: var(--header-background-color);
+  padding: 25px;
+  padding-top: 5px;
+  padding-bottom: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.header p {
+  color: var(--header-text-color);
+  margin: 0;
+}
+
+.title_box {
+  position: static;
+  height: 60px;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 35px;
+  margin: 0;
+}
+
+
+
