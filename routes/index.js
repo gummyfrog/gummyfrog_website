@@ -17,9 +17,9 @@ class customRouter {
 	setup() {
 
 		this.router.get('/', function(req, res){
-			res.render('home', {
-				title: 'Home',
-				description: 'gmfr homepage'
+			res.render('index', {
+				title: 'Fons Signatus',
+				description: 'Fons Signatus'
 			});
 		});
 
