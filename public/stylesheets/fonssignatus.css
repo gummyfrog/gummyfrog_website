@@ -32,6 +32,10 @@ body {
 	height: 100px;
 }
 
+.project {
+	padding-bottom: 15px;
+}
+
 #TextLogo, #ProjectsLogo{
 	height: 100px;
 }
