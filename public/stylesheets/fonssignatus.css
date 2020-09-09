@@ -28,12 +28,7 @@ body {
 	height: 110px;
 }
 
-#TextLogo {
-	position: relative;
-	height: 100px;
-}
-
-#ProjectsLogo {
+#TextLogo, #ProjectsLogo{
 	height: 100px;
 }
 
@@ -56,9 +51,6 @@ body {
 
 
 footer p {
-	font: 1.3em 'Open Sans', sans-serif;
-	font-weight: 200;
-	text-align: left;
 	line-height: 0.1em;
 }
 
@@ -114,5 +106,16 @@ p {
   .smaller {
   	width: 100%;
   }
+}
+
+@media only screen and (max-width: 768px) {
+	body {
+		width: 80%;
+		margin: auto;
+	}
+
+	#Logo {
+		height: 30px;
+	}	
 }
 
