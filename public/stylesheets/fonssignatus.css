@@ -37,6 +37,8 @@ body {
 	top: 70px;
 	height: 60px;
 	right: 40px;
+	opacity: 1
+	transition: 1s ease;
 }
 
 .center {
@@ -109,13 +111,24 @@ p {
 }
 
 @media only screen and (max-width: 768px) {
-	body {
+	.content {
 		width: 80%;
 		margin: auto;
 	}
 
 	#Logo {
-		height: 30px;
+		opacity: 0;
 	}	
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+  	
+	  body {
+	    width: 500px;
+	  }
 }
 
