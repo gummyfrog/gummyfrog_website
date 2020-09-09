@@ -9,7 +9,11 @@ body {
 }
 
 .break {
-	padding-bottom: 100px;
+	padding-bottom: 50px;
+}
+
+.smallbreak {
+	padding-bottom: 0px;
 }
 
 .content {
@@ -25,7 +29,7 @@ body {
 
 .header, .project-head, .footer-head{
 	width: 100%;
-	height: 110px;
+	height: 100px;
 }
 
 #TextLogo, #ProjectsLogo{
@@ -47,8 +51,8 @@ body {
 }
 
 .smaller {
-	width: 60%;
-	transition: 1s ease;
+	max-width: 568px;
+	transition: 0.3s ease;
 }
 
 
@@ -56,29 +60,38 @@ footer p {
 	line-height: 0.1em;
 }
 
-h1 {
-	margin: 0;
-	font: 1.5em 'Montserrat', cursive;
-	font-weight: 800;
-	text-align: left;
+h1, h2, h3, h4, a {
 	line-height: 1.3em;
+	margin: 0
+}
+
+h1 {
+	font: 1.5em 'Montserrat', sans-serif;
+	font-weight: 800;
 }
 
 a, h2 {
 	color: white;
-	margin: 0;
-	font: 1.5em 'Montserrat', cursive;
+	font: 1.5em 'Montserrat', sans-serif;
 	font-weight: 600;
-	text-align: left;
-	line-height: 1.3em;
 	padding-top: 10px;
 }
 
-p {
+h3 {
+	font: 1.3em 'Montserrat', sans-serif;
+	font-weight: 600;
+}
+
+p, h4 {
 	font: 1.3em 'Open Sans', sans-serif;
 	font-weight: 200;
-	text-align: left;
-	line-height: 1.3em;
+	line-height: 1.4em;
+}
+
+h4 a {
+	font: 1em 'Montserrat', sans-serif;
+	font-weight: 600;
+	text-decoration: underline
 }
 
 #bg {
@@ -86,7 +99,7 @@ p {
   padding: 0;
   box-sizing: border-box;
   width: 100%;
-  height: 150vh;
+  height: 230vh;
   position: absolute;
   top: 1vh;
   left: 0;
@@ -101,16 +114,12 @@ p {
 
 
 @media only screen and (max-width: 1000px) {
-  h1 {
-    text-align: left !important;
-  }
-
   .smaller {
   	width: 100%;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 568px) {
 	.content {
 		width: 80%;
 		margin: auto;
@@ -121,3 +130,26 @@ p {
 	}	
 }
 
+
+.blink {
+	animation: 1s blink step-end infinite;
+	-webkit-animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+	from, to {
+		color: transparent;
+	}
+	50% {
+		color: white;
+	}
+}
+
+@-webkit-keyframes blink {
+	from, to {
+		color: transparent;
+	}
+	50% {
+		color: white;
+	}
+}

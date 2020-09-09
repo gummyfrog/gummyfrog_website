@@ -9,12 +9,13 @@ var
     	stop6 = document.getElementById('stop6'),
     	gradientTL,
     	drawlinesTL,
-    	maskPaths = document.querySelectorAll('#bg-mask path');
+    	maskPaths = document.querySelectorAll('#bg-mask path, #bg-mask text');
     	//maskPaths = []
 
 function initGradient() {
 	gradientTL = new TimelineMax({paused: true, repeat: -1});
 	gradientTL
+		.yoyo(true)
 		.fromTo(stop1, 15,
 			{
 				attr:{offset:0},
