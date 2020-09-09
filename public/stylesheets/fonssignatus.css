@@ -31,7 +31,10 @@ body {
 #TextLogo {
 	position: relative;
 	height: 100px;
-	float: left;
+}
+
+#ProjectsLogo {
+	height: 100px;
 }
 
 #Logo {

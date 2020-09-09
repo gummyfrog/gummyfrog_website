@@ -95,7 +95,7 @@ function initGradient() {
 			},
 		)	
 	drawlinesTL.play().timeScale(0.3);
-	gradientTL.play();
+	gradientTL.play().timeScale(0.8);
 }
 
 initGradient();
