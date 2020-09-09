@@ -1,13 +1,13 @@
 extends layout
 
 block content
-	div.content
+	div.content(style="padding-top: 30px")
 		div.header
 			svg(id="TextLogo" fill='url(#bg-gradient)' viewbox='0 0 168 48')
 				text(font-family='Montserrat-Medium, Montserrat' font-weight='400')
-					tspan(x='0' y='34') CONTEXT
+					tspan(x='0' y='42') PERSONAL WORK
 				text(font-family='Montserrat-Black, Montserrat' font-weight='700')
-					tspan(x='0' y='18') Monolith
+					tspan(x='0' y='26') GMFR
 		div.center
 			h1 The internet is a powerful tool. #[span.blink _]
 			div.smaller
@@ -17,7 +17,7 @@ block content
 			div.project-head
 				svg(id="ProjectsLogo" fill='url(#bg-gradient)' viewbox='0 0 168 48')
 					text(font-family='Montserrat-Black, Montserrat' font-weight='700')
-						tspan(x='0' y='40') Recently
+						tspan(x='0' y='40') • Misc
 			div.project.break
 				h1 Code Contributions #[span.blink _]
 				a(href="https://github.com/gummyfrog") github.com/gummyfrog
@@ -31,7 +31,7 @@ block content
 			div.project-head
 				svg(id="ProjectsLogo" fill='url(#bg-gradient)' viewbox='0 0 168 48')
 					text(font-family='Montserrat-Black, Montserrat' font-weight='700')
-						tspan(x='0' y='40') Fons Signatus
+						tspan(x='0' y='40') •• Fons Signatus
 			div.project
 				a(href="http://gmfr.herokuapp.com/") gmfr.herokuapp.com
 				br
@@ -39,16 +39,17 @@ block content
 
 				div.smaller
 					p Fons Signatus is an attempt to aggregate aggregators; projects that expand our individual contexts by showing us the big picture. These projects express themselves in different ways, and are all collected here. I've contributed the Twitter Tracker, the onus. 
-					p Fons Signatus is an ever expanding project, actively searching for projects to feature. Get in contact, I'd love to hear from you. Any project, small large or large large.
+					p Fons Signatus is an ever expanding project, actively searching for projects to feature. Get in contact, I'd love to hear from you.
 
 
 		div#projects
 			div.project-head
 				svg(id="ProjectsLogo" fill='url(#bg-gradient)' viewbox='0 0 168 48')
 					text(font-family='Montserrat-Black, Montserrat' font-weight='700')
-						tspan(x='0' y='40') The Past
+						tspan(x='0' y='40') ••• The Past
 			div.project
-				h1 Apogeo Photos - Site and Email Admin, Design, Layout, Branding
+				h1 Apogeo - Domain Admin
+				h1 + Design, Layout, Branding
 				a(href="https://www.apogeophotos.com") apogeophotos.com
 				div.smaller
 					p Although the site is currently offline, Apogeo Photos is a photojournalism site, hosting blog posts and articles on travel, as well as interviews and foreign photography.
@@ -59,7 +60,7 @@ block content
 					p Photojournalism and fashion site.
 
 			div.project
-				h1 Auditype - Developer
+				h1 Auditype - Dev
 				a(href="auditype") gmfr/auditype
 				div.smaller
 					p Auditype was my first professional Mac App, a utility that adds digital audal feedback for the keyboard/mouse.
@@ -70,7 +71,7 @@ block content
 					text(font-family='Montserrat-Black, Montserrat' font-weight='700')
 						tspan(x='0' y='48') The Future
 			p Always more coming. Lose your context.
-			p > neilsemail@me.com
+			p neilsemail@me.com +1 267-475-3257
 
 	div#bg
 		svg#bg-lines(width='100%' height='100%')

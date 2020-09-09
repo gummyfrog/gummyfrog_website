@@ -59,12 +59,11 @@ body {
 	transition: 0.3s ease;
 }
 
-
-footer p {
-	line-height: 0.1em;
+.footer p {
+	line-height: 1.3em;
 }
 
-h1, h2, h3, h4, a {
+h1, h2, h3, h4, h5, a {
 	line-height: 1.3em;
 	margin: 0
 }
