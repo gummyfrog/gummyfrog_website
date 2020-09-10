@@ -86,7 +86,7 @@ h3 {
 
 p, h4 {
 	font: 1.3em 'Open Sans', sans-serif;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 1.4em;
 }
 
@@ -181,7 +181,7 @@ text-size-adjust {
 
 @media screen and (min-width: 320px) {
   html {
-    font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(13px + 6 * ((100vw - 320px) / 680));
   }
 }
 @media screen and (min-width: 1000px) {
