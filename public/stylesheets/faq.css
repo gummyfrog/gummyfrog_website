@@ -1,5 +1,5 @@
 body {
-  padding: 65px;
+  padding: 30px;
   font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: white;
 }
@@ -12,8 +12,7 @@ p {
 }
 
 .content {
-  padding: 50px;
-  width: 55%;
+  width: 90%;
   margin: auto;
 }
 

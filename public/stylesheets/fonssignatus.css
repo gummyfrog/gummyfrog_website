@@ -3,6 +3,7 @@ body {
 	background-color: #3a333f;
 	color: #fff;
 	overflow-x: hidden;
+	overflow-y: scroll;
   	position: relative;
   	width: 100%; height: 100%;
 	transition: 0.2s ease;
@@ -119,12 +120,12 @@ text-size-adjust {
   padding: 0;
   box-sizing: border-box;
   width: 10%;
-  height: 100vh;
   position: absolute;
-  top: 1vh;
-  left: 0;
+  top: 0px;
+  left: 0px;
   background-color: #3A333F;
   overflow: hidden;
+  height: 100%;
 }
 #bg #bg-lines {
   width: 100%; height: 100%;

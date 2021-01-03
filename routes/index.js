@@ -30,13 +30,6 @@ class customRouter {
 			});
 		});
 
-		this.router.get('/resizer', function(req, res){
-			res.render('resizer', {
-				title: 'Instagram Image Formatter',
-				description: 'aspect-ratio fit images into a square'
-			});
-		});
-
 		this.router.get('/cw_faq', function(req, res){
 			res.render('cw_faq', {
 				title: 'Cuck Watch FAQ',

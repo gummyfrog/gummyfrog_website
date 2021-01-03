@@ -1,47 +1,46 @@
 extends layout
 
 block content
-	title FONS SIGNATUS
+	title ✰ Dataview Hub ✰
 	div.content
 		div.header
 			svg(id="TextLogo" fill='url(#bg-gradient)' viewbox='0 0 168 48')
 				text(font-family='Montserrat-Medium, Montserrat' font-weight='400')
-					tspan(x='0' y='34') FONS SIGNATUS
+					tspan(x='0' y='34') ✰ DATAVIEW
 				text(font-family='Montserrat-Black, Montserrat' font-weight='700')
-					tspan(x='0' y='18') Monolith
-			img#Logo(src="images/Drip.svg")
+					tspan(x='0' y='18') GMFR
 
 		div.center.break
-			h1 Data leaks from the seams of the net. #[span.blink _]
+			h1 Information is all around us! #[span.blink _]
 			div.smaller
-				p A collection of projects built on data aggregation. What kind of things can we learn when we take a step back? Collecting, collating, and analyzing large amounts of information normally only viewed "up close" within its individual context, information recontextualized for a new perspective.
+				p This page serves as a flashy, inefficient collection of a few projects, all of which focus on the recontextualization of data.
 
-				p Touch the big picture. Interact with trends that span large swaths of time - hear many different thoughts, voices, ideas overlapped. Take a new perspective on what we all put on the internet.
+				p We leave little crumbs of information all over the net- posts, timestamps, metadata, prose, images, etc. A lot can be learned by collating and comparing these crumbs. A picture emerges from seemingly random noise!
+
+				p The flashiness of this page does not necessarily reflect my philosophy on design. Low load times, readability and long term preservation should be prioritized above all. This page is different- think of it as a hub. You won't be here for long. The manifesto is short, the idea is simple, and hopefully a flashy page will have encouraged you to take the time to read it. The data will speak for itself, and I encourage you to take a look at the projects below.
+
+				p Expect a few graphs to show up on the right side of the page at some point.
+
+				p yours truly, -gmfr
 
 		div#projects.break
 			div.project-head
 				svg(id="ProjectsLogo" fill='url(#bg-gradient)' viewbox='0 0 168 48')
 					text(font-family='Montserrat-Black, Montserrat' font-weight='700')
-						tspan(x='0' y='40') Projects
+						tspan(x='0' y='40') ✰ Projects
 			div.project
 				h1 Twitter Tracker
 				a(href="http://twitter-tracking.herokuapp.com/") twitter-tracking.herokuapp.com
 				div.smaller
 					p Twitter Tracker aggregates thousands of Tweets and recursively analyzes trends. Hashtags are associated with their most frequently used words, phrases and emojis. View the history of the usage of hashtags on Twitter.
 
-			div.project
-				h1 Something Else Entirely
-				a(href="/") Coming Soon...
-				div.smaller
-					p To find threads you pull on threads. Correlations. Lower yourself into the darkness, sink into specificity, find your home.
-
 		div.footer
 			div.footer-head
 				svg(id="TextLogo" fill='url(#bg-gradient)' viewbox='0 0 168 48')
 					text(font-family='Montserrat-Black, Montserrat' font-weight='700')
-						tspan(x='0' y='48') The Future
-			p More coming. Lose your context.
-			p > neilsemail@me.com
+						tspan(x='0' y='48') ✰ Contact
+			p If you'd like a project to be featured here, or have questions, shoot me an email.
+			p ✰ neilsemail@me.com ✰
 
 	div#bg
 		include fons-bg.pug
