@@ -1,5 +1,3 @@
-// modified from move37
-
 var
 		stop1 = document.getElementById('stop1'),
     	stop2 = document.getElementById('stop2'),
@@ -95,6 +93,7 @@ function initGradient() {
 				ease: Quad.easeInOut,
 			},
 		)	
+
 	drawlinesTL.play().timeScale(0.3);
 	gradientTL.play().timeScale(0.8);
 }
